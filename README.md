@@ -6,13 +6,15 @@
 
 #### Description:
 
-\
-This is a simplified stock market simulation game, in this game, you are a investor
+This is an investment simulation game in which the player invests in the financial market and aims 
+to generate the highest earnings. World events and real-time news will occur and result in 
+unpredicted effects on asset prices. 
+
+This is an stock market simulation game, in this game, you are a investor
 who want to make more money through market. As a simplified game, we simplify the real - 
 word stock market function to several main sector ** Holding, News, Market, Exchange **
 
 #### Rules:
-
 
 
 #### Features:
@@ -36,3 +38,10 @@ In-code documentation
 
 Holding, News, Market, Exchange;
 how features relate to the coding requirements
+
+
+#### Assets
+
+Apple
+Oil
+Gas
