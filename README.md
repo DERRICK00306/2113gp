@@ -63,7 +63,7 @@ The game will randomly draw market news from a news pool at a particular timepoi
 7.	Review transactions history
 Every transaction and deal will be automatically recorded in a transaction history array with dynamic memory as indicated in (2) and (4). It will be printed at the end of the game (or when the player goes bankrupt).
 
-Asset list (Price in US Dollars)
+####Asset list (Price in US Dollars)
 
 Stocks:
 1. Apple 
