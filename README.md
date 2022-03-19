@@ -35,31 +35,50 @@ the player may have to commit a significant amount of money to enjoy a discount.
 (i.e. borrowings from your mom) will be printed.  
 5. A list of transactions, the final holding asset and return will be printed at the end of the game (or when the player goes bankrupt). 
 
+
+Goal:
+1. Achieve as much return as possible within the limited time period. 
+2. Try not to be broke – mom will be really mad if you don’t have enough money to buy her a mother’s day gift.
+
 #### Features:
 
-1. Generation of random game sets or events
-  News, Exchange
+1.	Asset price fluctuation every turn
+Multiple assets including stocks, oils, gold, and bitcoins are tradable in the game. Asset prices change every turn. The price variation is stochastic, and prices will be shown at the beginning of every turn. The game uses an array to store the current price of assets. The function implementing price fluctuations will be stored in a separate file.
 
-2. Dynamic memory management? 
+2.	Execute transaction orders
+The player executes transactions via input. The player will input the number of shares/quantities of the asset they want to purchase, and the trade will then be executed. An array storing the player’s asset holdings will be updated. Recording your transactions in the aggregated transaction history necessitates the usage of dynamic memory management.
 
-3. Data structure (array)
-  Holding - game status
-  
-4. File input/ouput 
-  input transaction orders, output stock prices, news, and the player's asset holdings in the market/exchange.
-  
-5. Codes in multiple files
-  We will define functions in multiple files
-  
-  
-In-code documentation
+3.	Check currently holding assets
+The player checks their holding assets via input. A multi-dimensional array that stores the price, quantity and current gains or losses of your current holding will be shown. The array will be stored in a separate file to keep the main file clear and readable.
 
-Holding, News, Market, Exchange;
-how features relate to the coding requirements
+4.	Make a deal with a third-party
+A third-party (i.e., Sir Derrick) will offer the player deals of a randomly chosen asset with a randomly generated price. The offers would be printed on the screen, while the player inputs yes or no to indicate whether they will accept the deal. If you accept the offer from Sir Derrick, your current holding will be updated. The game will also record the deal in the player’s transaction history by dynamic memory management, and a text will be shown for confirmation. This feature will be realized in a separate file to keep the main file clear and readable.
+
+5.	Borrow fund 
+The player borrows funds via input. The player can borrow money from mom to expand their investment. The player may input the amount of money they want to borrow, and his total loans will be updated. It will be stored in a separate file to make the main function clear and readable.
+
+6.	Receive market news
+The game will randomly draw market news from a news pool at a particular timepoint. Then it calls a corresponding news function that prints the news content on the screen and impels the market to fluctuate. Those news functions shall be stored in separate files.
+
+7.	Review transactions history
+Every transaction and deal will be automatically recorded in a transaction history array with dynamic memory as indicated in (2) and (4). It will be printed at the end of the game (or when the player goes bankrupt).
+
+Asset list (Price in US Dollars)
+
+Stocks:
+1. Apple 
+2. Tesla
+3. Microsoft
+4. Amazon
+Commodities:
+1. Crude oil
+2. Gold
+Cryptocurrency:
+1. Bitcoin
+Foreign currency:
+1. Chinese Yuan
 
 
-#### Assets
 
-Apple
-Oil
-Gas
+
+
