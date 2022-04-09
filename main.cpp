@@ -22,7 +22,7 @@ double interest();
 
 void update_asset_price();
 
-void print_market(Asset a); //print stock price (market information) || price and return
+void print_market(Asset a, int r); //print stock price (market information) || price and return
 
 void print_portfolio(Asset a); // print user's portfolio || gain, loss, rate
 
