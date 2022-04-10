@@ -1,7 +1,7 @@
 #include<iostream>
 #include<string>
 #include"print_market.h"
-
+#include"print_portfolio.h"
 using namespace std;
 
 struct Asset {
@@ -22,9 +22,9 @@ double interest();
 
 void update_asset_price();
 
-void print_market(Asset a, int r); //print stock price (market information) || price and return
+void print_market(Asset a[8], int r[8]); //print stock price (market information) || price and return
 
-void print_portfolio(Asset a); // print user's portfolio || gain, loss, rate
+void print_portfolio(Asset a[8]); // print user's portfolio || gain, loss, rate
 
 void print_news();
 
@@ -49,8 +49,8 @@ int main(){
     asset[3] = {"AMAZON",    3090, 0, 0, "Stock"};
     asset[4] = {"OIL",       100,  0, 0, "Commodity"};
     asset[5] = {"GOLD",      1950, 0, 0, "Commodity"};
-    asset[6] = {"BITCOIN",   42500,0, 0, "DIGITAL"};
-    asset[7] = {"CNY",       6380, 0, 0, "CURRENCY"};
+    asset[6] = {"BITCOIN",   42500,0, 0, "Digital"};
+    asset[7] = {"CNY",       6380, 0, 0, "Currency"};
     cout << "Gamerule" << endl;
     cout << "List of command" << endl;
     cout <<  "Start" << endl;
