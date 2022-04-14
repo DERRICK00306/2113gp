@@ -13,6 +13,12 @@ struct Asset {
     string catogory;
 
 };
+struct Transaction{
+    double price;
+    int volume;
+    string time;
+};
+
 
 #include"print_market.h"
 #include"print_portfolio.h"
@@ -41,6 +47,10 @@ void pay_interest();
 
 void transaction_review();  // pointer
 
+void grow_transaction(Transaction * &t, int &t_size, int grow);
+
+void add_transaction(double price, int volumn, string round);
+
 void result();
 
 
@@ -55,6 +65,9 @@ int main(){
     asset[5] = {"GOLD",      1950, 0, 0, "Commodity"};
     asset[6] = {"BITCOIN",   42500,0, 0, "Digital"};
     asset[7] = {"CNY",       6380, 0, 0, "Currency"};
+    
+    Transaction transaction[8];
+    
     cout << "Gamerule" << endl;
     cout << "List of command" << endl;
     cout <<  "Start" << endl;
