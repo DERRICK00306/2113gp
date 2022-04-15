@@ -49,7 +49,7 @@ void transaction_review();  // pointer
 
 void grow_transaction(Transaction * &t, int &t_size, int grow);
 
-void add_transaction(double price, int volumn, string round);
+void add_transaction(Transaction * &t, double price, int volumn, string round);
 
 void result();
 
@@ -65,8 +65,8 @@ int main(){
     asset[5] = {"GOLD",      1950, 0, 0, "Commodity"};
     asset[6] = {"BITCOIN",   42500,0, 0, "Digital"};
     asset[7] = {"CNY",       6380, 0, 0, "Currency"};
-    
-    Transaction transaction[8];
+    int t_size = 8;
+    Transaction transaction[t_size];
     
     cout << "Gamerule" << endl;
     cout << "List of command" << endl;
