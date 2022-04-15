@@ -17,6 +17,8 @@ struct Transaction{
     double price;
     int volume;
     string time;
+    string name;
+    string status;
 };
 
 
@@ -24,6 +26,7 @@ struct Transaction{
 #include"print_portfolio.h"
 #include"print_news.h"
 #include"update_price.h"
+#include"transaction.h"
 
 void update_price(Asset a[], double r_array[]);// random rate of return
 
@@ -45,11 +48,12 @@ void deal_with_client();
 
 void pay_interest();
 
-void transaction_review();  // pointer
+void grow_transaction(Transaction* &t, int& t_size, int grow);
 
-void grow_transaction(Transaction * &t, int &t_size, int grow);
+void add_transaction(Transaction*& t, double price, int volume, string round, string name, string status, int &number_t, int t_size);
 
-void add_transaction(Transaction * &t, double price, int volumn, string round);
+void transaction_review(Transaction*& t, int number_t);
+
 
 void result();
 
