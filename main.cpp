@@ -1,6 +1,14 @@
 #include<iostream>
 #include<string>
 
+#include"print_market.h"
+#include"print_portfolio.h"
+#include"print_news.h"
+#include"update_price.h"
+#include"transaction.h"
+#include"purchase_and_sell.h"
+#include"result.h"
+
 using namespace std;
 
 const int asset_number = 8;
@@ -22,12 +30,6 @@ struct Transaction{
 };
 
 
-#include"print_market.h"
-#include"print_portfolio.h"
-#include"print_news.h"
-#include"update_price.h"
-#include"transaction.h"
-
 void update_price(Asset a[], double r_array[]);// random rate of return
 
 double offer_bid(); // random offer / bid  price and volume
@@ -40,7 +42,7 @@ void print_portfolio(Asset a[asset_number]); // print user's portfolio || gain, 
 
 void print_news();
 
-void purchase_or_sell(string name, double amount);
+void purchase_or_sell(Asset a[8], string action, string name, int amount, string time);
 
 void borrow();
 
@@ -54,8 +56,7 @@ void add_transaction(Transaction*& t, double price, int volume, string round, st
 
 void transaction_review(Transaction*& t, int number_t);
 
-
-void result();
+void result(Asset a[8]);
 
 
 int main(){
@@ -69,7 +70,9 @@ int main(){
     asset[5] = {"GOLD",      1950, 0, 0, "Commodity"};
     asset[6] = {"BITCOIN",   42500,0, 0, "Digital"};
     asset[7] = {"CNY",       6380, 0, 0, "Currency"};
-    int t_size = 8;
+    
+    int t_size = 8; // initial transaction capacity
+    int number_t = 0; // current number of transaction 
     Transaction transaction[t_size];
     
     cout << "Gamerule" << endl;
