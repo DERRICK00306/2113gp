@@ -97,4 +97,5 @@ int main(){
       //}
 
     }
+    // print news, cout possible actions, action, borrow?, dealw/client?, interest
 }
