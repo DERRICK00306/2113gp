@@ -21,7 +21,7 @@ void grow_transaction(Transaction* &t, int& t_size, int grow) {
 }
 
 void add_transaction(Transaction*& t, double price, int volume, string round, string name,
-                      string status, int &number_t, int t_size) {
+                      string status, int &number_t, int &t_size) {
     if (number_t >= t_size) { grow_transaction(t, t_size, 3); }
     t[number_t].price = price;
     t[number_t].volume = volume;
