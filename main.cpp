@@ -42,7 +42,7 @@ void print_portfolio(Asset a[asset_number]); // print user's portfolio || gain, 
 
 void print_news();
 
-void purchase_or_sell(Asset a[8], string action, string name, int amount, string time);
+void purchase_or_sell(Asset a[8], string action, string name, int amount, string time， Transaction *& t, int &number_t, int &t_size);
 
 void borrow();
 
@@ -52,7 +52,7 @@ void pay_interest();
 
 void grow_transaction(Transaction* &t, int& t_size, int grow);
 
-void add_transaction(Transaction*& t, double price, int volume, string round, string name, string status, int &number_t, int t_size);
+void add_transaction(Transaction*& t, double price, int volume, string round, string name, string status, int &number_t, int &t_size);
 
 void transaction_review(Transaction*& t, int number_t);
 
