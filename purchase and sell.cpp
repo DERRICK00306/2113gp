@@ -6,7 +6,7 @@
 using namespace std;
 
 
-void purchase_or_sell(Asset a[8], string action, string name, int amount, string time){
+void purchase_or_sell(Asset a[8], string action, string name, int amount, string time, Transaction * &t, int &number_t, int &t_size){
   int i;
   for (i=0; i<8; i++){
     if (a[i].asset_name == name){
