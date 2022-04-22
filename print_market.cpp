@@ -4,6 +4,8 @@
 #include "print_market.h"
 using namespace std;
 
+
+
 void print_market(Asset a[], double r[]) {
     int i;
     cout << "The table below shows the current market information:" << endl;

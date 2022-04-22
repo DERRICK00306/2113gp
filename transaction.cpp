@@ -4,6 +4,22 @@
 #include"transaction.h"
 using namespace std;
 
+struct Asset {
+    string asset_name;
+    double current_price;
+    int holding_volume;
+    double average_price;
+    string catogory;
+
+};
+struct Transaction{
+    double price;
+    int volume;
+    string time;
+    string name;
+    string status;
+};
+
 void grow_transaction(Transaction* &t, int& t_size, int grow) {
     int i;
     int new_size = t_size + grow;
