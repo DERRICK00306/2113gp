@@ -30,6 +30,7 @@ struct Transaction{
 };
 
 
+
 void update_price(Asset a[], double r_array[]);// random rate of return
 
 double offer_bid(); // random offer / bid  price and volume
@@ -46,7 +47,7 @@ void purchase_or_sell(Asset a[8], string action, string name, int amount, string
 
 void borrow();
 
-void deal_with_client();
+void deal_with_client(); // implement purcahse and sale function
 
 void pay_interest();
 
@@ -70,11 +71,11 @@ int main(){
     asset[5] = {"GOLD",      1950, 0, 0, "Commodity"};
     asset[6] = {"BITCOIN",   42500,0, 0, "Digital"};
     asset[7] = {"CNY",       6380, 0, 0, "Currency"};
-    
+
     int t_size = 8; // initial transaction capacity
-    int number_t = 0; // current number of transaction 
+    int number_t = 0; // current number of transaction
     Transaction transaction[t_size];
-    
+
     cout << "Gamerule" << endl;
     cout << "List of command" << endl;
     cout <<  "Start" << endl;
