@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void update_price(Asset a[], double r_array[]){
+void update_price(Asset a[8], double r_array[8]){
   srand(time(NULL));
 
   //double r_array[asset_number];
