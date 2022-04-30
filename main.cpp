@@ -1,11 +1,11 @@
 #include<iostream>
 #include<string>
-
-//#include"print_market.h"
-//#include"print_portfolio.h"
-//#include"print_news.h"
-//#include"update_price.h"
-//#include"transaction.h"
+#include<sstream>
+#include"print_market.h"
+#include"print_portfolio.h"
+#include"print_news.h"
+#include"update_price.h"
+#include"transaction.h"
 #include"purchase_and_sell.h"
 #include"result.h"
 #include"transaction_verification.h"
@@ -120,8 +120,8 @@ int main(){
       string round = ss.str();
       cout << round << endl;
       double r_array[asset_number];
-      //update_price(asset, r_array);
-      //print_market(asset, r_array);
+      update_price(asset, r_array);
+      print_market(asset, r_array);
       //cout << "news" << endl;
 
       //cout << "Current Round" << endl;
@@ -177,4 +177,5 @@ int main(){
 
     }
     // print news, cout possible actions, action, borrow?, dealw/client?, interest
+
 }
