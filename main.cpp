@@ -103,7 +103,7 @@ int main(){
     int borrow = 0;
 
 
-    cout << "Gamerule" << endl;
+    cout << "Game rule" << endl;
     //copy readme.md
 
     cout << "List of command" << endl;

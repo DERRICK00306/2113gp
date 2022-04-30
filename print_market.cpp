@@ -23,7 +23,7 @@ struct Transaction{
     string status;
 };
 
-void print_market(Asset a[], double r[]) {
+void print_market(Asset a[8], double r[8]) {
     int i;
     cout << "The table below shows the current market information:" << endl;
     cout << "------------------------------------------------------------" << endl; //50 "-" intotal

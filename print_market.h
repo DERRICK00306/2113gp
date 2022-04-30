@@ -13,7 +13,6 @@ struct Asset {
 };
 
 
-
 struct Transaction{
     double price;
     int volume;
@@ -21,5 +20,5 @@ struct Transaction{
     string name;
     string status;
 };
-void print_market(Asset a, double r);
+void print_market(Asset a[], double r[]);
 #endif

@@ -26,5 +26,5 @@ struct Transaction{
     string status;
 };
 */
-void offer_bid(Asset a[8], double cash, int round);
+void offer_bid(Asset a[8], double cash, int round, Transaction * &t, int &number_t, int &t_size);
 #endif
