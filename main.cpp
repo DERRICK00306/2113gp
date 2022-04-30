@@ -113,22 +113,29 @@ int main(){
 
     int nRound = 1;
 
-    while(nRound < 10){
+    while(nRound < 10)
+    {
       stringstream ss;
       ss << nRound;
       string round = ss.str();
       cout << round << endl;
+
+      cout << "--------" << round << "--------" << endl;
+
       double r_array[asset_number];
+
       update_price(asset, r_array);
+
       print_market(asset, r_array);
       //cout << "news" << endl;
       print_news();
       //cout << "Current Round" << endl;
-      nRound++;
+
 
       //deal_with_client(); // possibly Sir Derrick will offer a deal
 
-      while(true){
+      while(true)
+      {
         int command = 0;
 
 
@@ -136,46 +143,89 @@ int main(){
         cout << "1: Purhcase asset" << endl
              << "2: Sell asset" << endl
              << "3: Borrow money from mom" << endl
-             << "4: Deal with Sir Derick (Exclusive discount!)" << endl;
+             << "4: Deal with Sir Derick (Exclusive discount!)" << endl
+             << "5: Check market" << endl
+             << "6: Check my portfolio" << endl
+             << "0: End this turn" << endl
+             << "----------------" << endl
+             << "Input command (e.g. 3):" << endl;
+
 
         cin >> command;
 
-        switch(command)
+        if (command == 0)
+          cout << round << " ends.\n"
+          << "----------------\n";
+
+          break;
+        else if (command >= 1 && command <= 6)
         {
-          case 1: case 2:
+          switch(command)
           {
-            print_asset_list();
-            cout << "Input asset name in all caps (e.g. APPLE): " << endl;
-
-            string name;
-            cin >> name;
-
-            cout << "Input purchase volume in integer (e.g. 150): " << endl;
-            int vol;
-            cin >> vol;
-
-            string buy_or_sell;
-            if (command == 1)
-              buy_or_sell = "B";
-            else if (command == 2)
-              buy_or_sell = "S";
-
-            if (transaction_verification(asset, buy_or_sell, name, vol, cash))
+            case 1: case 2:
             {
-              purchase_or_sell(asset, buy_or_sell, name, vol, round, t, number_t, t_size); // decrease or increase cash
+              print_asset_list();
+              cout << "Input asset name in all caps (e.g. APPLE): " << endl;
+
+              string name;
+              cin >> name;
+
+              cout << "Input purchase volume in integer (e.g. 150): " << endl;
+              int vol;
+              cin >> vol;
+
+              string buy_or_sell;
+              if (command == 1)
+                buy_or_sell = "B";
+              else if (command == 2)
+                buy_or_sell = "S";
+
+              if (transaction_verification(asset, buy_or_sell, name, vol, cash))
+              {
+                purchase_or_sell(asset, buy_or_sell, name, vol, round, t, number_t, t_size); // decrease or increase cash
+              }
+              break;
+
             }
-            break;
+            case 3:
+            {
+              borrow_from_mom(borrow, cash);
+              break;
+            }
+            case 4:
+            {
+              offer_bid(asset, cash, nRound, t, number_t, t_size);
+              break;
+            }
+            case 5:
+            {
+              print_market(asset, r_array);
+              break;
+            }
+            case 6:
+            {
+              print_portfolio(asset);
+              break;
+            }
 
-          }
-          //case 3:
-          //{
-            //borrow(borrow, cash);
-          //}
+          };
+        }
+        else
+          cout << "Invalid input. Please input your command again.\n";
 
-        };
-      }
+      }// end of one action
 
-    }
-    // print news, cout possible actions, action, borrow?, dealw/client?, interest
+      pay_interest(borrow, cash);
+      nRound++;
+    }// end of one round
+
+    //end of Game
+    cout << "Game ends!\n"
+    << "Your portofolio:\n";
+    print_portfolio(asset);
+    cout << "Cash: $" << cash << "\n"
+    << "Transactions:\n";
+    transaction_review(t, number_t);
+    
 
 }
