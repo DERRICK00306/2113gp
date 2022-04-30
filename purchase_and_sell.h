@@ -1,8 +1,9 @@
 #include<iostream>
 #include<string>
+using namespace std;
 #ifndef _PURCHASE_SELL_H
 #define _PURCHASE_SELL_H
-
+/*
 struct Asset {
     string asset_name;
     double current_price;
@@ -18,5 +19,6 @@ struct Transaction{
     string name;
     string status;
 };
+*/
 void purchase_or_sell(Asset a[8], string action, string name, int amount, string time);
 #endif

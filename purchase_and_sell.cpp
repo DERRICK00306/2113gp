@@ -4,7 +4,7 @@
 #include"print_portfolio.h"
 #include"transaction.h"
 using namespace std;
-
+/*
 struct Asset {
     string asset_name;
     double current_price;
@@ -21,7 +21,7 @@ struct Transaction{
     string name;
     string status;
 };
-
+*/
 void purchase_or_sell(Asset a[8], string action, string name, int amount, string time){
   int i;
   for (i=0; i<8; i++){

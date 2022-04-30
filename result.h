@@ -1,6 +1,6 @@
 #ifndef _RESULT_H
 #define _RESULT_H
-
+/*
 struct Asset {
     string asset_name;
     double current_price;
@@ -16,7 +16,7 @@ struct Transaction{
     string name;
     string status;
 };
-
+*/
 double result(Asset a[8]);
 
 #endif

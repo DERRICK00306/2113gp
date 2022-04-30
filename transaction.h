@@ -1,6 +1,9 @@
 #ifndef _TRANSACTION_H
 #define _TRANSACTION_H
+#include<string>
+using namespace std;
 
+/*
 struct Asset {
     string asset_name;
     double current_price;
@@ -17,6 +20,7 @@ struct Transaction{
     string name;
     string status;
 };
+*/
 
 void grow_transaction(Transaction* &t, int& t_size, int grow);
 

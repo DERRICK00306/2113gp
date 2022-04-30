@@ -7,15 +7,12 @@
 //#include"update_price.h"
 //#include"transaction.h"
 #include"purchase_and_sell.h"
-//#include"result.h"
+#include"result.h"
+#include"transaction_verification.h"
 
 using namespace std;
 
 const int asset_number = 8;
-
-
-
-
 /*
 struct Asset {
     string asset_name;
@@ -35,7 +32,6 @@ struct Transaction{
     string name;
     string status;
 };
-
 */
 
 bool transaction_verification(Asset a[8], string action, string name, int amount, double cash); //to verify if a transaction is possible (purchasing does not exceed total money, selling does not exceed total volume)
@@ -66,8 +62,27 @@ void add_transaction(Transaction*& t, double price, int volume, string round, st
 
 void transaction_review(Transaction*& t, int number_t);
 
-void result(Asset a[8]);
+double result(Asset a[8]);
 
+void print_asset_list()
+{
+  cout << "Asset list" << endl
+       << "****************"
+       << "Stocks:\n"
+       << "APPLE\n"
+       << "TESLA\n"
+       << "MICROSOFT\n"
+       << "AMAZON\n"
+       << "\n"
+       << "Commodities:\n"
+       << "OIL\n"
+       << "GOLD\n"
+       << "\n"
+       << "Cryptos:\n"
+       << "BITCOIN"
+       << "Foreign currency:\n"
+       << "CNY (Chinese Yuan)\n";
+}
 
 int main(){
     //initialization
@@ -97,38 +112,42 @@ int main(){
 
     cout <<  "Start" << endl;
 
-    int round = 1;
+    int nRound = 1;
 
-    while(round < 10){
-      cout << "Round " << round << endl;
+    while(nRound < 10){
+      stringstream ss;
+      ss << nRound;
+      string round = ss.str();
+      cout << round << endl;
       double r_array[asset_number];
       //update_price(asset, r_array);
       //print_market(asset, r_array);
       //cout << "news" << endl;
 
       //cout << "Current Round" << endl;
-      round++;
+      nRound++;
 
       //deal_with_client(); // possibly Sir Derrick will offer a deal
 
       while(true){
-        char command;
+        int command = 0;
+
+
+        cout << "List of command: " << endl;
+        cout << "1: Purhcase asset" << endl
+             << "2: Sell asset" << endl
+             << "3: Borrow money from mom" << endl
+             << "4: Deal with Sir Derick (Exclusive discount!)" << endl;
+
         cin >> command;
 
-
-        /*
-        cout << "List of command: " << endl;
-        cout << "B: Purhcase asset" << endl
-             << "S: Sell asset" << endl;
-             << "Bor: Borrow money from mom" << endl;
-
-        */
-
-        /*
         switch(command)
         {
-          case "B":
+          case 1: case 2:
+          {
+            print_asset_list();
             cout << "Input asset name in all caps (e.g. APPLE): " << endl;
+
             string name;
             cin >> name;
 
@@ -136,19 +155,24 @@ int main(){
             int vol;
             cin >> vol;
 
-            if (transaction_verification(asset, "B", name, vol, cash))
+            string buy_or_sell;
+            if (command == 1)
+              buy_or_sell = "B";
+            else if (command == 2)
+              buy_or_sell = "S";
+
+            if (transaction_verification(asset, buy_or_sell, name, vol, cash))
             {
-              purchase_or_sell(asset, "B", name, vol, "Round" + round); // decrease or increase cash
+              purchase_or_sell(asset, buy_or_sell, name, vol, round ); // decrease or increase cash
             }
-          }
-
-            //}
-
             break;
-          case "S":
+          }
+          //case 3:
+          //{
+            //borrow(borrow, cash);
+          //}
 
         };
-        */
       }
 
     }
