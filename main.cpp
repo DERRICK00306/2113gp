@@ -42,7 +42,7 @@ void print_portfolio(Asset a[asset_number]); // print user's portfolio || gain, 
 
 void print_news();
 
-void purchase_or_sell(Asset a[8], string action, string name, int amount, string time， Transaction *& t, int &number_t, int &t_size);
+void purchase_or_sell(Asset a[8], string action, string name, int amount, string time, Transaction * &t, int &number_t, int &t_size);
 
 void borrow();
 
@@ -50,9 +50,11 @@ void deal_with_client();
 
 void pay_interest();
 
+
 void grow_transaction(Transaction* &t, int& t_size, int grow);
 
-void add_transaction(Transaction*& t, double price, int volume, string round, string name, string status, int &number_t, int &t_size);
+void add_transaction(Transaction*& t, double price, int volume, string round, string name,
+                      string status, int &number_t, int &t_size);
 
 void transaction_review(Transaction*& t, int number_t);
 
@@ -70,11 +72,11 @@ int main(){
     asset[5] = {"GOLD",      1950, 0, 0, "Commodity"};
     asset[6] = {"BITCOIN",   42500,0, 0, "Digital"};
     asset[7] = {"CNY",       6380, 0, 0, "Currency"};
-    
+
     int t_size = 8; // initial transaction capacity
-    int number_t = 0; // current number of transaction 
+    int number_t = 0; // current number of transaction
     Transaction transaction[t_size];
-    
+
     cout << "Gamerule" << endl;
     cout << "List of command" << endl;
     cout <<  "Start" << endl;
