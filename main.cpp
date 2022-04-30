@@ -9,6 +9,9 @@
 #include"purchase_and_sell.h"
 #include"result.h"
 #include"transaction_verification.h"
+#include"offer_bid.h"
+#include"pay_interest.h"
+#include"borrow.h"
 
 using namespace std;
 
@@ -36,11 +39,9 @@ struct Transaction{
 
 bool transaction_verification(Asset a[8], string action, string name, int amount, double cash); //to verify if a transaction is possible (purchasing does not exceed total money, selling does not exceed total volume)
 
-void update_price(Asset a[], double r_array[]);// random rate of return
+void update_price(Asset a[8], double r_array[8]);// random rate of return
 
-double offer_bid(); // random offer / bid  price and volume
-
-double interest();
+void offer_bid(Asset a[8], double cash, int round, Transaction * &t, int &number_t, int &t_size); // random offer / bid  price and volume
 
 void print_market(Asset a[asset_number], double r[asset_number]); //print stock price (market information) || price and return
 
@@ -48,13 +49,11 @@ void print_portfolio(Asset a[asset_number]); // print user's portfolio || gain, 
 
 void print_news();
 
-void purchase_or_sell(Asset a[8], string action, string name, int amount, string time);
+void purchase_or_sell(Asset a[8], string action, string name, int amount, string time, Transaction * &t, int &number_t, int &t_size);
 
 void borrow_from_mom(int& borrow, double& cash);
 
-void deal_with_client(); // implement purcahse and sale function
-
-void pay_interest();
+void pay_interest(int borrow, int & cash);
 
 void grow_transaction(Transaction* &t, int& t_size, int grow);
 
@@ -123,7 +122,7 @@ int main(){
       update_price(asset, r_array);
       print_market(asset, r_array);
       //cout << "news" << endl;
-
+      print_news();
       //cout << "Current Round" << endl;
       nRound++;
 
@@ -163,9 +162,10 @@ int main(){
 
             if (transaction_verification(asset, buy_or_sell, name, vol, cash))
             {
-              purchase_or_sell(asset, buy_or_sell, name, vol, round ); // decrease or increase cash
+              purchase_or_sell(asset, buy_or_sell, name, vol, round, t, number_t, t_size); // decrease or increase cash
             }
             break;
+
           }
           //case 3:
           //{
