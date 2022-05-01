@@ -27,7 +27,7 @@ void print_news(){
 	pool[17] = "COVID will end in one month.";
 	pool[18] = "TAOBAO will take the place of Amozon soon.";
 	pool[19] = "Apple will provide discount price for their employee.";
-	srand(time(0)); int x;
+	srand(time(NULL)); int x;
 	x = rand() % 20;
 	cout << "Todays' news :" << endl;
 	cout << pool[x] << endl;

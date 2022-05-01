@@ -1,6 +1,7 @@
 #include<iostream>
 #include<string>
 #include<sstream>
+
 #include"print_market.h"
 #include"print_portfolio.h"
 #include"print_news.h"
@@ -83,17 +84,22 @@ void print_asset_list()
        << "CNY (Chinese Yuan)\n";
 }
 
-int main(){
+int main()
+{
     //initialization
 
     Asset asset[asset_number];
+
+    string asset_name_list[8] = {"APPLE", "TESLA", "MICROSOFT", "AMAZON", "OIL",
+  "GOLD", }
+
     asset[0] = {"APPLE",     170,  0, 0, "Stock"};
     asset[1] = {"TESLA",     1026, 0, 0, "Stock"};
     asset[2] = {"MICROSOFT", 297,  0, 0, "Stock"};
     asset[3] = {"AMAZON",    3090, 0, 0, "Stock"};
     asset[4] = {"OIL",       100,  0, 0, "Commodity"};
     asset[5] = {"GOLD",      1950, 0, 0, "Commodity"};
-    asset[6] = {"BITCOIN",   42500,0, 0, "Digital"};
+    asset[6] = {"BITCOIN",   42500,0, 0, "Cryptos"};
     asset[7] = {"CNY",       6380, 0, 0, "Currency"};
 
     int t_size = 8; // initial transaction capacity
@@ -124,16 +130,12 @@ int main(){
 
       double r_array[asset_number];
 
-      update_price(asset, r_array);
+      //update_price(asset, r_array);
 
-      print_market(asset, r_array);
+      //print_market(asset, r_array);
       //cout << "news" << endl;
       print_news();
-      //cout << "Current Round" << endl;
-
-
-      //deal_with_client(); // possibly Sir Derrick will offer a deal
-
+      /*
       while(true)
       {
         int command = 0;
@@ -214,18 +216,17 @@ int main(){
           cout << "Invalid input. Please input your command again.\n";
 
       }// end of one action
-
-      pay_interest(borrow, cash);
+      */
+      //pay_interest(borrow, cash);
       nRound++;
     }// end of one round
 
     //end of Game
     cout << "Game ends!\n"
     << "Your portofolio:\n";
-    print_portfolio(asset);
+    //print_portfolio(asset);
     cout << "Cash: $" << cash << "\n"
     << "Transactions:\n";
-    transaction_review(t, number_t);
-    
+    //transaction_review(t, number_t);
 
 }

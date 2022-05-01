@@ -20,5 +20,5 @@ struct Transaction{
     string name;
     string status;
 };
-void print_market(Asset a[], double r[]);
+void print_market(Asset a[8], double r[8]);
 #endif
