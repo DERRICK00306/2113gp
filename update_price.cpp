@@ -4,12 +4,28 @@
 
 using namespace std;
 
+struct Asset {
+    string asset_name;
+    double current_price;
+    int holding_volume;
+    double average_price;
+    string catogory;
+
+};
+struct Transaction{
+    double price;
+    int volume;
+    string time;
+    string name;
+    string status;
+};
+
 void update_price(Asset a[8], double r_array[8]){
   srand(time(NULL));
 
   //double r_array[asset_number];
 
-  for (int i = 0; i < asset_number; i++)
+  for (int i = 0; i < 8; i++)
   {
     int increment = (rand()%21-10)
                     +(rand()%11-5)

@@ -149,7 +149,7 @@ int main()
 
       double r_array[asset_number];
 
-      //update_price(asset, r_array);
+      update_price(asset, r_array);
 
       //print_market(asset, r_array);
       //cout << "news" << endl;
