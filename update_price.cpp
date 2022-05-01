@@ -4,7 +4,6 @@
 
 using namespace std;
 
-<<<<<<< Updated upstream
 struct Asset {
     string asset_name;
     double current_price;
@@ -21,19 +20,13 @@ struct Transaction{
     string status;
 };
 
-void update_price(Asset a[8], double r_array[8]){
-=======
-void update_price(Asset a[], double r_array[]){
->>>>>>> Stashed changes
+void update_price(Asset a[8], double r_array[8])
+{
   srand(time(NULL));
 
   //double r_array[asset_number];
 
-<<<<<<< Updated upstream
   for (int i = 0; i < 8; i++)
-=======
-  for (int i = 0; i < asset_number; i++)
->>>>>>> Stashed changes
   {
     int increment = (rand()%21-10)
                     +(rand()%11-5)

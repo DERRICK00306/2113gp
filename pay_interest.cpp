@@ -4,7 +4,7 @@
 #include<ctime>
 using namespace std;
 
-void pay_interest(int borrow, int & cash)
+void pay_interest(int borrow, double & cash)
 {
   string pool[10];
   pool[0] = "we go for a fancy dinner tonight?";
@@ -30,7 +30,7 @@ void pay_interest(int borrow, int & cash)
   cout << "------------------------------" << endl;
 
   int interest_rate = rand()%4 + rand()%4 + rand()%4 + 1;
-  int expense = borrow * interest_rate / 100;
+  double expense = borrow * interest_rate / 100;
 
   cout << "Event bill: $" << expense << endl;
 

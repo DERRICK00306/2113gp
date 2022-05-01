@@ -6,8 +6,10 @@ using namespace std;
 
 #include"purchase_and_sell.h"
 #include"transaction_verification.h"
+#include"offer_bid.h"
+#include"transaction.h"
 
-void offer_bid(Asset a[8], double cash, int round)
+void offer_bid(Asset a[8], double cash, int round, Transaction * &t, int &number_t, int &t_size)
 {
   cout << "Sir Derrick: I have prepared a nice deal for you. Check this..." << endl;
 
@@ -36,7 +38,7 @@ void offer_bid(Asset a[8], double cash, int round)
   {
     if (transaction_verification(a, "B", a[asset_index], real_volume, cash))
     {
-      purchase_or_sell(a, "B", a[asset_index], real_volume, round );
+      purchase_or_sell(a, "B", a[asset_index], real_volume, round, t, number_t, t_size );
     }
     cout << "------------------------------" << endl;
     cout << "Transaction has been successful.\n"
@@ -51,10 +53,5 @@ void offer_bid(Asset a[8], double cash, int round)
   {
     cout << "Invalid input. Please input 'Yes' or 'No'.\n";
   }
-
-}
-
-int main()
-{
 
 }

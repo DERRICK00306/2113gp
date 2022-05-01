@@ -54,11 +54,7 @@ void print_portfolio(Asset a[asset_number]); // print user's portfolio || gain, 
 
 void print_news();
 
-<<<<<<< HEAD
 void purchase_or_sell(Asset a[8], string action, string name, int amount, string time, Transaction * &t, int &number_t, int &t_size);
-=======
-void purchase_or_sell(Asset a[8], string action, string name, int amount, string time， Transaction *& t, int &number_t, int &t_size);
->>>>>>> e85ef8724e993a266c03803242682ae101b0c3f5
 
 void borrow_from_mom(int& borrow, double& cash);
 
@@ -162,7 +158,7 @@ int main()
       print_market(asset, r_array);
       //cout << "news" << endl;
       print_news();
-      /*
+
       while(true)
       {
         int command = 0;
@@ -243,7 +239,7 @@ int main()
           cout << "Invalid input. Please input your command again.\n";
 
       }// end of one action
-      */
+      
       //pay_interest(borrow, cash);
       nRound++;
     }// end of one round
