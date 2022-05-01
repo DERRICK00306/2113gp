@@ -7,7 +7,7 @@ using namespace std;
 #include"purchase_and_sell.h"
 #include"transaction_verification.h"
 #include"offer_bid.h"
-#include"transaction.h"
+
 
 void offer_bid(Asset a[8], double cash, int round, Transaction * &t, int &number_t, int &t_size)
 {
@@ -24,7 +24,7 @@ void offer_bid(Asset a[8], double cash, int round, Transaction * &t, int &number
 
   int real_volume = (int) generate_volume;
   double discount_price = discount_factor * a[asset_index].current_price;
-  double total_expense = discount_price * real_volume
+  double total_expense = discount_price * real_volume;
 
   cout << "Deal: A total of " << real_volume << " units of "
        << a[asset_index].asset_name << " at a price of $" << discount_price << " per unit "
@@ -36,13 +36,13 @@ void offer_bid(Asset a[8], double cash, int round, Transaction * &t, int &number
   cin >> reply;
   if (reply == "Yes" || reply == "yes" || reply == "Y" || reply == "y")
   {
-    if (transaction_verification(a, "B", a[asset_index], real_volume, cash))
+    if (transaction_verification(a, "B", a[asset_index].asset_name, real_volume, cash))
     {
-      purchase_or_sell(a, "B", a[asset_index], real_volume, round, t, number_t, t_size );
+      purchase_or_sell(a, "B", a[asset_index].asset_name, real_volume, round, t, number_t, t_size );
     }
     cout << "------------------------------" << endl;
     cout << "Transaction has been successful.\n"
-    << "Sir Derrick: See you next round!\n"
+    << "Sir Derrick: See you next round!\n";
 
   }
   else if (reply == "No" || reply == "no" || reply == "N" || reply == "n")

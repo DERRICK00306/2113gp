@@ -46,7 +46,7 @@ bool transaction_verification(Asset a[8], string action, string name, int amount
 
 void update_price(Asset a[8], double r_array[8]);// random rate of return
 
-void offer_bid(Asset a[8], double cash, int round, Transaction * &t, int &number_t, int &t_size); // random offer / bid  price and volume
+void offer_bid(Asset a[8], double cash, string round, Transaction * &t, int &number_t, int &t_size); // random offer / bid  price and volume
 
 void print_market(Asset a[asset_number], double r[asset_number]); //print stock price (market information) || price and return
 
@@ -58,7 +58,7 @@ void purchase_or_sell(Asset a[8], string action, string name, int amount, string
 
 void borrow_from_mom(int& borrow, double& cash);
 
-void pay_interest(int borrow, int & cash);
+void pay_interest(int borrow, double & cash);
 
 void grow_transaction(Transaction* &t, int& t_size, int grow);
 
@@ -221,7 +221,7 @@ int main()
             }
             case 4:
             {
-              offer_bid(asset, cash, nRound, t, number_t, t_size);
+              offer_bid(asset, cash, round, t, number_t, t_size);
               break;
             }
             case 5:

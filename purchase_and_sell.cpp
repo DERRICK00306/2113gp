@@ -14,7 +14,6 @@ struct Asset {
 
 };
 
-<<<<<<< HEAD:purchase_and_sell.cpp
 struct Transaction{
     double price;
     int volume;
@@ -23,10 +22,8 @@ struct Transaction{
     string status;
 };
 */
-void purchase_or_sell(Asset a[8], string action, string name, int amount, string time){
-=======
-void purchase_or_sell(Asset a[8], string action, string name, int amount, string time, Transaction * &t, int &number_t, int &t_size){
->>>>>>> e85ef8724e993a266c03803242682ae101b0c3f5:purchase and sell.cpp
+void purchase_or_sell(Asset a[8], string action, string name, int amount,
+  string time, Transaction * &t, int &number_t, int &t_size){
   int i;
   for (i=0; i<8; i++){
     if (a[i].asset_name == name){
@@ -38,7 +35,7 @@ void purchase_or_sell(Asset a[8], string action, string name, int amount, string
       else if (action == "S"){
         int old_volume = a[i].holding_volume;
         a[i].holding_volume -= amount;
-        if (a[i].holding_volume == 0){ a[i].average_price == 0;}
+        if (a[i].holding_volume == 0){ a[i].average_price = 0;}
         else {
         a[i].average_price = (old_volume * a[i].average_price - amount * a[i].current_price)/a[i].holding_volume;
         }
