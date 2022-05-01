@@ -13,6 +13,7 @@
 #include"offer_bid.h"
 #include"pay_interest.h"
 #include"borrow.h"
+#include"struct.h"
 
 using namespace std;
 

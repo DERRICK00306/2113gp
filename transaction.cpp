@@ -4,6 +4,7 @@
 #include"transaction.h"
 using namespace std;
 
+/*
 struct Asset {
     string asset_name;
     double current_price;
@@ -19,7 +20,7 @@ struct Transaction{
     string name;
     string status;
 };
-
+*/
 void grow_transaction(Transaction* &t, int& t_size, int grow) {
     int i;
     int new_size = t_size + grow;

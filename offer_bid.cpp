@@ -9,7 +9,7 @@ using namespace std;
 #include"offer_bid.h"
 
 
-void offer_bid(Asset a[8], double cash, int round, Transaction * &t, int &number_t, int &t_size)
+void offer_bid(Asset a[8], double cash, string round, Transaction * &t, int &number_t, int &t_size)
 {
   cout << "Sir Derrick: I have prepared a nice deal for you. Check this..." << endl;
 
