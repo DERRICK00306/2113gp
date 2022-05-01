@@ -91,7 +91,26 @@ int main()
     Asset asset[asset_number];
 
     string asset_name_list[8] = {"APPLE", "TESLA", "MICROSOFT", "AMAZON", "OIL",
-  "GOLD", }
+  "GOLD", "BITCOIN", "CNY"};
+
+    double current_price_list[8] = {170, 1026, 297, 3090, 100, 1950, 42500, 6380};
+
+    //int holding_volume_list[8];
+
+    //double average_price_list[8];
+
+    string category_list[8] = {"Stock", "Stock", "Stock", "Stock", "Commodity", "Commodity", "Cryptos", "Currency"};
+
+    //initialize assets
+    for (int i = 0; i < 8; i++)
+    {
+      asset[i].asset_name = asset_name_list[i];
+      asset[i].current_price = current_price_list[i];
+      asset[i].holding_volume = 0;
+      asset[i].average_price = 0;
+      asset[i].catogory = category_list[i];
+    }
+    /*
 
     asset[0] = {"APPLE",     170,  0, 0, "Stock"};
     asset[1] = {"TESLA",     1026, 0, 0, "Stock"};
@@ -101,9 +120,9 @@ int main()
     asset[5] = {"GOLD",      1950, 0, 0, "Commodity"};
     asset[6] = {"BITCOIN",   42500,0, 0, "Cryptos"};
     asset[7] = {"CNY",       6380, 0, 0, "Currency"};
-
-    int t_size = 8; // initial transaction capacity
-    int number_t = 0; // current number of transaction
+    */
+    int t_size = 8; // initialize transaction capacity
+    int number_t = 0; // total number of transactions
     Transaction * t = new Transaction[t_size];
     double cash = 1000000; //initial cash: $1,000,000
     int borrow = 0;
