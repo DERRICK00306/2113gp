@@ -83,6 +83,12 @@ Stocks:
 
 #### Quick Start 
 
+![Qucik Start Image 1](https://github.com/DERRICK00306/2113gp/blob/main/1.jpg)
 
+As shown in the above images, a list of command that is available will be automatically printed on the terminal each time if you finish a previous command in case the player can't remember the command. For example, if command 1 is inputtd, all the assets list will be firstly printed, then the program will ask you for more information (e.g. asset name, buy or sell, quantitit, etc.)
+
+![Qucik Start Image 1](https://github.com/DERRICK00306/2113gp/blob/main/2.jpg)
+
+You could find that your portfolio table will also be printed it out whenever there is a updated information added into it. The Apple stock row is changed to match your latest holding information. After the whole execution of the command 1, the listed of command will be printed again. In this example, 6 are inputted, so the well - designed portfolio is printed again.
 
 
