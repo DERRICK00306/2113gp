@@ -11,6 +11,7 @@ struct Asset {
     double average_price;
     string catogory;
 
+<<<<<<< HEAD
 };
 struct Transaction{
     double price;
@@ -21,4 +22,8 @@ struct Transaction{
 };
 */
 void purchase_or_sell(Asset a[8], string action, string name, int amount, string time, Transaction * &t, int &number_t, int &t_size);
+=======
+void purchase_or_sell(Asset a[8], string action, string name, int amount, string time, Transaction * &t, int &number_t, int &t_size);
+
+>>>>>>> e85ef8724e993a266c03803242682ae101b0c3f5
 #endif

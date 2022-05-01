@@ -54,7 +54,11 @@ void print_portfolio(Asset a[asset_number]); // print user's portfolio || gain, 
 
 void print_news();
 
+<<<<<<< HEAD
 void purchase_or_sell(Asset a[8], string action, string name, int amount, string time, Transaction * &t, int &number_t, int &t_size);
+=======
+void purchase_or_sell(Asset a[8], string action, string name, int amount, string time， Transaction *& t, int &number_t, int &t_size);
+>>>>>>> e85ef8724e993a266c03803242682ae101b0c3f5
 
 void borrow_from_mom(int& borrow, double& cash);
 
@@ -62,7 +66,7 @@ void pay_interest(int borrow, int & cash);
 
 void grow_transaction(Transaction* &t, int& t_size, int grow);
 
-void add_transaction(Transaction*& t, double price, int volume, string round, string name, string status, int &number_t, int t_size);
+void add_transaction(Transaction*& t, double price, int volume, string round, string name, string status, int &number_t, int &t_size);
 
 void transaction_review(Transaction*& t, int number_t);
 
