@@ -27,6 +27,10 @@ struct Asset {
 
 };
 
+<<<<<<< Updated upstream
+=======
+double update_price(); // generate a random rate of return for each asset and update asset prices
+>>>>>>> Stashed changes
 
 
 struct Transaction{
