@@ -80,7 +80,7 @@ Stocks:
 #### Foreign currency:
 1. Chinese Yuan
 
-
+#### No non-standard are used in our program
 #### Quick Start 
 
 ![Qucik Start Image 1](https://github.com/DERRICK00306/2113gp/blob/main/1.jpg)
