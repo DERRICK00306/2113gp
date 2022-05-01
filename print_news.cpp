@@ -2,7 +2,7 @@
 #include<string>
 #include<cstdlib>
 #include<time.h>
-//#include"print_news.h"
+#include"print_news.h"
 using namespace std;
 // ALL NEWS BELOW ARE JUST JOKING< DON"T TAKE IT SERIOUSLY
 void print_news(){

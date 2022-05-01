@@ -1,3 +1,9 @@
+#include <string>
+using namespace std;
+
+#ifndef STRUCT_H
+#define STRUCT_H
+
 struct Asset {
     string asset_name;
     double current_price;
@@ -14,3 +20,5 @@ struct Transaction{
     string name;
     string status;
 };
+
+#endif

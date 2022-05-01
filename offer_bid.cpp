@@ -7,6 +7,7 @@ using namespace std;
 #include"purchase_and_sell.h"
 #include"transaction_verification.h"
 #include"offer_bid.h"
+#include"struct.h"
 
 
 void offer_bid(Asset a[8], double cash, string round, Transaction * &t, int &number_t, int &t_size)

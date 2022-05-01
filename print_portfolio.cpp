@@ -2,6 +2,7 @@
 #include<iomanip>
 #include<string>
 #include "print_portfolio.h"
+#include "struct.h"
 using namespace std;
 
 void print_portfolio(Asset a[8]) {

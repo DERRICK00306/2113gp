@@ -2,6 +2,8 @@
 #include<string>
 #include<iomanip>
 #include"transaction.h"
+#include"struct.h"
+
 using namespace std;
 
 /*

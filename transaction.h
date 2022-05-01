@@ -2,6 +2,7 @@
 #define _TRANSACTION_H
 #include<string>
 using namespace std;
+#include"struct.h"
 
 void grow_transaction(Transaction* &t, int& t_size, int grow);
 

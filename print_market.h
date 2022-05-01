@@ -3,6 +3,8 @@
 #define _PRINT_MARKET_H
 #include<string>
 using namespace std;
+#include "struct.h"
+/*
 struct Asset {
     string asset_name;
     double current_price;
@@ -20,5 +22,6 @@ struct Transaction{
     string name;
     string status;
 };
+*/
 void print_market(Asset a[8], double r[8]);
 #endif

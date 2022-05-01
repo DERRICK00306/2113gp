@@ -3,6 +3,7 @@
 #include"purchase_and_sell.h"
 #include"print_portfolio.h"
 #include"transaction.h"
+#include"struct.h"
 using namespace std;
 /*
 struct Asset {

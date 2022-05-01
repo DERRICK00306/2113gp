@@ -2,6 +2,7 @@
 #include <iomanip>
 #include <string>
 #include "print_market.h"
+#include "struct.h"
 using namespace std;
 /*
 struct Asset {

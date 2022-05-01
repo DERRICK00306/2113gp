@@ -1,6 +1,7 @@
 #include<iostream>
 #include<string>
 #include"result.h"
+#include"struct.h"
 using namespace std;
 
 double result(Asset a[8]){
