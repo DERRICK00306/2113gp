@@ -3,7 +3,7 @@
 #include <string>
 #include "print_market.h"
 using namespace std;
-
+/*
 struct Asset {
     string asset_name;
     double current_price;
@@ -22,7 +22,7 @@ struct Transaction{
     string name;
     string status;
 };
-
+*/
 void print_market(Asset a[8], double r[8]) {
     int i;
     cout << "The table below shows the current market information:" << endl;
@@ -33,7 +33,7 @@ void print_market(Asset a[8], double r[8]) {
     for (i = 0; i < 8; i++) {
 
         cout << "| " << setw(10) << a[i].asset_name << " | " << setw(13) << a[i].current_price
-            << " | " << setw(12) << r[i]*100 + "%" << " | " << setw(12) << a[i].catogory
+            << " | " << setw(12) << r[i]*100 << "%" << " | " << setw(12) << a[i].catogory
             << " |" << endl;
     }
     cout << "------------------------------------------------------------" << endl;

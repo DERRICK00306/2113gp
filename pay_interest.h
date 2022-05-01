@@ -28,5 +28,5 @@ struct Transaction{
 };
 */
 
-void pay_interest(int borrow, int & cash);
+void pay_interest(int borrow, double & cash);
 #endif

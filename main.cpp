@@ -179,10 +179,12 @@ int main()
         cin >> command;
 
         if (command == 0)
+        {
           cout << round << " ends.\n"
           << "----------------\n";
-
           break;
+        }
+
         else if (command >= 1 && command <= 6)
         {
           switch(command)
@@ -239,17 +241,17 @@ int main()
           cout << "Invalid input. Please input your command again.\n";
 
       }// end of one action
-      
-      //pay_interest(borrow, cash);
+
+      pay_interest(borrow, cash);
       nRound++;
     }// end of one round
 
     //end of Game
     cout << "Game ends!\n"
     << "Your portofolio:\n";
-    //print_portfolio(asset);
+    print_portfolio(asset);
     cout << "Cash: $" << cash << "\n"
     << "Transactions:\n";
-    //transaction_review(t, number_t);
+    transaction_review(t, number_t);
 
 }
