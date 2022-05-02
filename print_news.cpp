@@ -4,7 +4,7 @@
 #include<time.h>
 #include"print_news.h"
 using namespace std;
-// ALL NEWS BELOW ARE JUST JOKING< DON"T TAKE IT SERIOUSLY
+// Fictional news to be randomly selected for each round
 void print_news(){
 	string pool[20];
 	pool[0] = "Apple will release IPHONE 21 in the coming year.";
@@ -30,5 +30,5 @@ void print_news(){
 	srand(time(NULL)); int x;
 	x = rand() % 20;
 	cout << "Todays' news :" << endl;
-	cout << pool[x] << endl;
+	cout << pool[x] << "\n\n";
 }

@@ -14,6 +14,7 @@
 #include"pay_interest.h"
 #include"borrow.h"
 #include"struct.h"
+#include"evaluation.h"
 
 using namespace std;
 
@@ -68,6 +69,11 @@ void transaction_review(Transaction*& t, int number_t);
 
 double result(Asset a[8]);
 // return total value of the player's portfolio
+// input: asset information
+
+void evalutation(double net_value);
+// final evaluation of the player's performance
+// input: the player's net value
 
 void print_asset_list()
 {
@@ -143,11 +149,9 @@ int main()
     {
       stringstream ss;
       ss << nRound;
-      string round = ss.str();
-      cout << round << endl;
+      string round = "Round" + ss.str();
 
-      cout << "--------" << round << "--------" << endl;
-
+      cout << "----------------------" << round << "----------------------" << "\n\n";
       double r_array[asset_number];
 
       update_price(asset, r_array);
@@ -162,15 +166,15 @@ int main()
 
 
         cout << "List of command: " << endl;
-        cout << "1: Purhcase asset" << endl
+        cout << "1: Purchase asset" << endl
              << "2: Sell asset" << endl
              << "3: Borrow money from mom" << endl
-             << "4: Deal with Sir Derick (Exclusive discount!)" << endl
+             << "4: Deal with Sir Derrick (Exclusive discount!)" << endl
              << "5: Check market" << endl
              << "6: Check my portfolio" << endl
              << "0: End this turn" << endl
              << "----------------" << endl
-             << "Input command (e.g. 3):" << endl;
+             << "Input command (e.g. 3): ";
 
 
         cin >> command;
@@ -178,7 +182,7 @@ int main()
         if (command == 0)
         {
           cout << round << " ends.\n"
-          << "----------------\n";
+          << "------------------------------------------------------------" << "n";
           break;
         }
 
@@ -189,12 +193,12 @@ int main()
             case 1: case 2:
             {
               print_asset_list();
-              cout << "Input asset name in all caps (e.g. APPLE): " << endl;
+              cout << "Input asset name in all caps (e.g. APPLE): ";
 
               string name;
               cin >> name;
 
-              cout << "Input purchase volume in integer (e.g. 150): " << endl;
+              cout << "Input purchase volume in integer (e.g. 150): ";
               int vol;
               cin >> vol;
 
@@ -240,15 +244,32 @@ int main()
       }// end of one action
 
       pay_interest(borrow, cash);
+      if (cash < 0)
+      {
+        cout << "Oops! You've been broke."
+      }
       nRound++;
+
     }// end of one round
 
     //end of Game
-    cout << "Game ends!\n"
-    << "Your portofolio:\n";
-    result(asset);
-    cout << "Cash: $" << cash << "\n"
-    << "Transactions:\n";
+
+    cout << "\n\nGame ends!\n\n";
+    print_portfolio(asset);
+
+    cout << "\n\n";
+
     transaction_review(t, number_t);
+
+    cout << "\n\n";
+
+    double total_asset_value = result(asset);
+    cout << "Total asset value: $" << total_asset_value << "\n";
+    cout << "Cash: $" << fixed << cash << "\n";
+    cout << "Borrowing: $" << borrow << "\n";
+
+    int net_value = total_asset_value + cash - borrow;
+
+    evalutation(net_value);
 
 }

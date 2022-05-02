@@ -26,10 +26,10 @@ struct Transaction{
 */
 void print_market(Asset a[8], double r[8]) {
     int i;
-    cout << "The table below shows the current market information:" << endl;
-    cout << "------------------------------------------------------------" << endl; //50 "-" intotal
-    cout << "| " << setw(10) << "Name" << " | " << setw(13) << "Current Price"
-        << " | " << setw(12) << "Return" << " | " << setw(12) << "Catagory" << " |" << endl; // 50 space in total
+    cout << "Current market:" << endl;
+    cout << "------------------------------------------------------------" << endl; //60 "-" intotal
+    cout << "| " << setw(10) << "Asset name" << " | " << setw(13) << "Current Price"
+        << " | " << setw(13) << "Return" << " | " << setw(12) << "Category" << " |" << endl; // 60 space in total
 
     for (i = 0; i < 8; i++) {
 
@@ -37,7 +37,7 @@ void print_market(Asset a[8], double r[8]) {
             << " | " << setw(12) << r[i]*100 << "%" << " | " << setw(12) << a[i].catogory
             << " |" << endl;
     }
-    cout << "------------------------------------------------------------" << endl;
+    cout << "------------------------------------------------------------" << "\n\n";
 }
 
 

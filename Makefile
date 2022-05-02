@@ -28,8 +28,11 @@ offer_bid.o: offer_bid.cpp purchase_and_sell.h transaction_verification.h struct
 pay_interest.o: pay_interest.cpp pay_interest.h
 	g++ -c pay_interest.cpp
 
+evaluation.o : evaluation.cpp evaluation.h
+	g++ -c evalution.cpp
+
 main.o: main.cpp
 	g++ -c main.cpp
 
-main: main.o print_news.o update_price.o print_market.o transaction_verification.o purchase_and_sell.o pay_interest.o offer_bid.o borrow.o transaction.o print_portfolio.o
-	g++ main.o print_news.o update_price.o print_market.o transaction_verification.o purchase_and_sell.o pay_interest.o offer_bid.o borrow.o transaction.o print_portfolio.o -o main
+main: main.o print_news.o update_price.o print_market.o transaction_verification.o purchase_and_sell.o pay_interest.o offer_bid.o borrow.o transaction.o print_portfolio.o evaluation.h
+	g++ main.o print_news.o update_price.o print_market.o transaction_verification.o purchase_and_sell.o pay_interest.o offer_bid.o borrow.o transaction.o print_portfolio.o evaluation.h -o main
