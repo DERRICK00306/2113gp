@@ -17,57 +17,57 @@
 
 using namespace std;
 
-const int asset_number = 8;
-/*
-struct Asset {
-    string asset_name;
-    double current_price;
-    int holding_volume;
-    double average_price;
-    string catogory;
+bool transaction_verification(Asset a[8], string action, string name, int amount, double cash);
+//verify if a transaction is possible, i.e., purchase amount does not exceed total cash or sell amount does not exceed current holding volume
+//input: asset information, buy or sell, asset name, trading amount, current Cash
+//output: a bool value - whether the transaction is possible
 
-};
+void update_price(Asset a[8], double r_array[8]);
+// update the prices of assets each turn
+// input: asset information, an array of return rates
+// the array of return rates will be updated in the function
 
-<<<<<<< Updated upstream
-=======
-double update_price(); // generate a random rate of return for each asset and update asset prices
->>>>>>> Stashed changes
+void offer_bid(Asset a[8], double cash, string round, Transaction * &t, int &number_t, int &t_size);
+// deal with Sir Derrick: randomly generate deals with discounts
+// input: asset information, current cash, current round, transaction history, total number of transactions, size of the dynamic array of transaction history
 
+void print_market(Asset a[8], double r[8]);
+//print asset prices in the market
+//input: price and return
 
-struct Transaction{
-    double price;
-    int volume;
-    string time;
-    string name;
-    string status;
-};
-*/
-
-bool transaction_verification(Asset a[8], string action, string name, int amount, double cash); //to verify if a transaction is possible (purchasing does not exceed total money, selling does not exceed total volume)
-
-void update_price(Asset a[8], double r_array[8]);// random rate of return
-
-void offer_bid(Asset a[8], double cash, string round, Transaction * &t, int &number_t, int &t_size); // random offer / bid  price and volume
-
-void print_market(Asset a[asset_number], double r[asset_number]); //print stock price (market information) || price and return
-
-void print_portfolio(Asset a[asset_number]); // print user's portfolio || gain, loss, rate
+void print_portfolio(Asset a[8]);
+// print the player's portfolio
+// input: asset information
 
 void print_news();
+// randomly select and print a piece of market news
 
 void purchase_or_sell(Asset a[8], string action, string name, int amount, string time, Transaction * &t, int &number_t, int &t_size);
+// implement a transaction, alter the player's cash and portfolio accordingly, and record it in the transaction history
+// input: asset information, buy/sell, asset name, amount to trade, current round, transaction history, total number of transactions, size of the dynamic array of transaction history
 
-void borrow_from_mom(int& borrow, double& cash);
+void borrow_from_mom(int& borrow, double &cash);
+// borrow money from mom with a upper bound of $1,000,000
+// input: borrowing amount, current cash
 
-void pay_interest(int borrow, double & cash);
+void pay_interest(int borrow, double &cash);
+// some family events generated at the end of each round. the amount the player has to pay depends on their borrowing amount.
+// input: borrowing amount, current cash
 
 void grow_transaction(Transaction* &t, int& t_size, int grow);
+// increase the size of the dynamic array of historical transactions
+// input: transaction history, size of the array, incremental size
 
 void add_transaction(Transaction*& t, double price, int volume, string round, string name, string status, int &number_t, int &t_size);
+// add a transaction to the transaction history
+// input: transaction history, trading price, trading volume, current round, asset name, buy/sell, total number of transactions, size of the dynamic array of transaction history
 
 void transaction_review(Transaction*& t, int number_t);
+// review past transactions
+// input: transaction history, total number of transactions
 
 double result(Asset a[8]);
+// return total value of the player's portfolio
 
 void print_asset_list()
 {
@@ -99,10 +99,6 @@ int main()
   "GOLD", "BITCOIN", "CNY"};
 
     double current_price_list[8] = {170, 1026, 297, 3090, 100, 1950, 42500, 6380};
-
-    //int holding_volume_list[8];
-
-    //double average_price_list[8];
 
     string category_list[8] = {"Stock", "Stock", "Stock", "Stock", "Commodity", "Commodity", "Cryptos", "Currency"};
 
@@ -250,7 +246,7 @@ int main()
     //end of Game
     cout << "Game ends!\n"
     << "Your portofolio:\n";
-    print_portfolio(asset);
+    result(asset);
     cout << "Cash: $" << cash << "\n"
     << "Transactions:\n";
     transaction_review(t, number_t);
