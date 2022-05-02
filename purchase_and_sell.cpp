@@ -44,6 +44,6 @@ void purchase_or_sell(Asset a[8], string action, string name, int amount,
       add_transaction(t, a[i].current_price, amount, time, a[i].asset_name, action, number_t, t_size);
     }
   }
-  cout << "The following table shows your latest portfolio: " << endl;
+  cout << "Your current portfolio: " << endl;
   print_portfolio(a);
 }

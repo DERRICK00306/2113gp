@@ -4,13 +4,15 @@
 #include <string>
 using namespace std;
 
-#include"purchase_and_sell.h"
-#include"transaction_verification.h"
+//#include"purchase_and_sell.h"
+//#include"transaction_verification.h"
+#include"transaction.h"
+#include"print_portfolio.h"
 #include"offer_bid.h"
 #include"struct.h"
 
 
-void offer_bid(Asset a[8], double cash, string round, Transaction * &t, int &number_t, int &t_size)
+void offer_bid(Asset a[8], double &cash, string round, Transaction * &t, int &number_t, int &t_size)
 {
   cout << "Sir Derrick: I have prepared a nice deal for you. Check this..." << endl;
 
@@ -26,33 +28,89 @@ void offer_bid(Asset a[8], double cash, string round, Transaction * &t, int &num
   int real_volume = (int) generate_volume;
   double discount_price = discount_factor * a[asset_index].current_price;
   double total_expense = discount_price * real_volume;
-
-  cout << "Deal: A total of " << real_volume << " units of "
-       << a[asset_index].asset_name << " at a price of $" << discount_price << " per unit "
-       << " with a total expense of $" << total_expense << ".\n"
-       << "------------------------------" << endl
-       << "Sir Derrick: That's a real discount! Are you taking this great opportunity? ('Yes'/'No')\n";
-
-  string reply;
-  cin >> reply;
-  if (reply == "Yes" || reply == "yes" || reply == "Y" || reply == "y")
+/*
+  while (true)
   {
+    cout << "Deal: A total of " << real_volume << " units of "
+         << a[asset_index].asset_name << " at a price of $" << discount_price << " per unit (while the market price is currently $"
+         << a[asset_index].current_price << ")"
+         << " with a total expense of $" << total_expense << ".\n"
+         << "------------------------------------------------------------" << endl
+         << "Sir Derrick: That's real discount! \n\n";
+
+
     if (transaction_verification(a, "B", a[asset_index].asset_name, real_volume, cash))
     {
-      purchase_or_sell(a, "B", a[asset_index].asset_name, real_volume, round, t, number_t, t_size );
-    }
-    cout << "------------------------------" << endl;
-    cout << "Transaction has been successful.\n"
-    << "Sir Derrick: See you next round!\n";
+      int old_volume = a[asset_index].holding_volume;
+      a[asset_index].holding_volume += real_volume;
+      a[asset_index].average_price = (old_volume * a[asset_index].average_price + amount * discount_price)/a[asset_index].holding_volume;
 
+      add_transaction(t, discount_price, real_volume, round, a[asset_index].asset_name, "B", number_t, t_size);
+
+      print_portfolio(a);
+
+    }
+      cout << "\n\n------------------------------------------------------------" << endl;
+      cout << "Sir Derrick: See you next round!\n";
+      break;
+    }
+    else
+    {
+      cout << "Sir Derrick: Never mind. See you next round!\n";
+      break;
+    }
   }
-  else if (reply == "No" || reply == "no" || reply == "N" || reply == "n")
+
+*/
+
+  while (true)
   {
-    cout << "Sir Derrick: Nevermind. See you next round!\n";
+    cout << "Deal: A total of " << real_volume << " units of "
+         << a[asset_index].asset_name << " at a price of $" << discount_price << " per unit (while the market price is currently $"
+         << a[asset_index].current_price << ")"
+         << " with a total expense of $" << total_expense << ".\n"
+         << "------------------------------" << endl
+         << "Sir Derrick: That's real discount! Are you taking this great opportunity? ('Yes'/'No')\n";
+
+    string reply;
+    cin >> reply;
+    if (reply == "Yes" || reply == "yes" || reply == "Y" || reply == "y")
+    {
+
+      if (total_expense > cash)
+      {
+        cout << "No enough cash. Transaction failed." << endl;
+        return false;
+      }
+
+      int old_volume = a[asset_index].holding_volume;
+      a[asset_index].holding_volume += real_volume;
+      a[asset_index].average_price = (old_volume * a[asset_index].average_price + amount * discount_price)/a[asset_index].holding_volume;
+
+      add_transaction(t, discount_price, real_volume, round, a[asset_index].asset_name, "B", number_t, t_size);
+
+      cash -= total_expense;
+
+      print_portfolio(a);
+
+      cout << "\n\n------------------------------------------------------------" << endl;
+      cout << "Sir Derrick: See you next round!\n";
+      break;
+    }
+    else if (reply == "No" || reply == "no" || reply == "N" || reply == "n")
+    {
+      cout << "Sir Derrick: Nevermind. See you next round!\n";
+      break;
+    }
+    else
+    {
+      cout << "Invalid input. Please input 'Yes' or 'No'.\n";
+    }
+
+
+    }
   }
-  else
-  {
-    cout << "Invalid input. Please input 'Yes' or 'No'.\n";
-  }
+
+
 
 }

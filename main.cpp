@@ -18,6 +18,8 @@
 
 using namespace std;
 
+const int asset_number = 8;
+
 bool transaction_verification(Asset a[8], string action, string name, int amount, double cash);
 //verify if a transaction is possible, i.e., purchase amount does not exceed total cash or sell amount does not exceed current holding volume
 //input: asset information, buy or sell, asset name, trading amount, current Cash
@@ -71,14 +73,14 @@ double result(Asset a[8]);
 // return total value of the player's portfolio
 // input: asset information
 
-void evalutation(double net_value);
+void evaluation(double net_value);
 // final evaluation of the player's performance
 // input: the player's net value
 
 void print_asset_list()
 {
   cout << "Asset list" << endl
-       << "****************"
+       << "------------------------------------------------------------\n\n"
        << "Stocks:\n"
        << "APPLE\n"
        << "TESLA\n"
@@ -90,7 +92,8 @@ void print_asset_list()
        << "GOLD\n"
        << "\n"
        << "Cryptos:\n"
-       << "BITCOIN"
+       << "BITCOIN\n"
+       << "\n"
        << "Foreign currency:\n"
        << "CNY (Chinese Yuan)\n";
 }
@@ -163,6 +166,7 @@ int main()
       while(true)
       {
         int command = 0;
+        cout << "Your current cash: $" << fixed << cash << "\n\n";
 
 
         cout << "List of command: " << endl;
@@ -178,6 +182,7 @@ int main()
 
 
         cin >> command;
+        cout << "\n\n";
 
         if (command == 0)
         {
@@ -246,7 +251,7 @@ int main()
       pay_interest(borrow, cash);
       if (cash < 0)
       {
-        cout << "Oops! You've been broke."
+        cout << "Oops! You've been broke.\n";
       }
       nRound++;
 
@@ -270,6 +275,6 @@ int main()
 
     int net_value = total_asset_value + cash - borrow;
 
-    evalutation(net_value);
+    evaluation(net_value);
 
 }

@@ -22,17 +22,20 @@ purchase_and_sell.o: purchase_and_sell.cpp purchase_and_sell.h print_portfolio.h
 borrow.o: borrow.cpp borrow.h
 	g++ -c borrow.cpp
 
-offer_bid.o: offer_bid.cpp purchase_and_sell.h transaction_verification.h struct.h
+offer_bid.o: offer_bid.cpp struct.h transaction.h print_portfolio.h
 	g++ -c offer_bid.cpp
 
 pay_interest.o: pay_interest.cpp pay_interest.h
 	g++ -c pay_interest.cpp
 
 evaluation.o : evaluation.cpp evaluation.h
-	g++ -c evalution.cpp
+	g++ -c evaluation.cpp
+
+result.o: result.cpp result.h
+	g++ -c result.cpp
 
 main.o: main.cpp
 	g++ -c main.cpp
 
-main: main.o print_news.o update_price.o print_market.o transaction_verification.o purchase_and_sell.o pay_interest.o offer_bid.o borrow.o transaction.o print_portfolio.o evaluation.h
-	g++ main.o print_news.o update_price.o print_market.o transaction_verification.o purchase_and_sell.o pay_interest.o offer_bid.o borrow.o transaction.o print_portfolio.o evaluation.h -o main
+main: main.o print_news.o update_price.o print_market.o transaction_verification.o purchase_and_sell.o pay_interest.o offer_bid.o borrow.o transaction.o print_portfolio.o evaluation.o result.o
+	g++ main.o print_news.o update_price.o print_market.o transaction_verification.o purchase_and_sell.o pay_interest.o offer_bid.o borrow.o transaction.o print_portfolio.o evaluation.o result.o -o main
