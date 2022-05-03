@@ -102,6 +102,41 @@ void print_asset_list()
 
 int main()
 {
+  
+  cout << "Description: " << endl;
+  cout << "This is an investment simulation game in which the player invests in the financial market and aims to generate the" << endl;
+  cout << "highest earnings. World events and news will occur while insightful investors shall take quick actions to change their" << endl;
+  cout << "market positions given a limited number of rounds to play. Alternatively, you may consider consulting with Sir" << endl;
+  cout << "Derrick, an affluent, witted broker who is always willing to offer you deals with discount. Additionally, you may borrow" << endl;
+  cout << "from your mom to achieve your dream of being a tycoon! However, you have to pay for some family events with the" << endl;
+  cout << "payment proportional to your borrowing amount. Try to earn as much money as possible in ten rounds !" << endl;
+  cout <<  endl;
+  cout << "Rules:" << endl;
+  cout << "The game has ten rounds in total. The player has an initial capital of $1,000,000 for investment." << endl;
+  cout << "Every round:" << endl;
+  cout << "A board of command list will be displayed to show the available actions in each turn:" << endl;
+  cout << "1. Updated asset prices will be displayed and breaking news might occur." << endl;
+  cout << "2. You may purchase assets in the market directly, make a deal with a third party, or borrow money from mom." << endl;
+  cout << "3. The player may check their current holdings, gains, or losses anytime." << endl;
+  cout << "4. The player may finish this turn anytime." << endl;
+  cout << "5. There's no interests for your borrowing, since you borrowed from your mom. Nonetheless, Mom will relentlessly" << endl;
+  cout << "   ask you for some favors if she has lent you some money, which entails payment proportional to your borrowing" << endl;
+  cout << "   amount." << endl;
+  cout << "6. You may end the round when you finish all actions you deem necessary and proceed to the next round." << endl;
+  cout << "7. Never have your cash down to zero. You will automatically become bankrupt and the game will end immediately." << endl;
+  cout << "8. The game will end automatically after ten rounds and your net investment return will be displayed." << endl;
+  cout <<  endl;
+  cout << "Notes: " << endl;
+  cout << "1. The third-party provides bulk purchase opportunities. The deals come with discounted prices but always high" << endl;
+  cout << "   quantities – the player may have to commit a significant amount of money to enjoy a discount." << endl;
+  cout << "2. The total amount of borrowing may not exceed $1,000,000. Loans will be deducted from your total earnings at" << endl;
+  cout << "   the end of the game and you can not repay them in advance." << endl;
+  cout << "3. You may choose to end the game in advance by typing in '-1' in the command panel." << endl;
+  cout << "4. A list of transactions, the final holding asset and return will be printed at the end of the game (or when the player" << endl;
+  cout << "   goes bankrupt)." << endl;
+  cout << endl;
+  cout << "Let's start to play the game! Try to generate as more value as possible while not to be bankrupt. " << endl;
+  cout << endl;
   //initialization
 
   Asset asset[asset_number];
