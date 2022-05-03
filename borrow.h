@@ -1,5 +1,5 @@
-#ifndef _OFFER_BID_H
-#define _OFFER_BID_H
+#ifndef _BORROW_H
+#define _BORROW_H
 
 #include <iostream>
 using namespace std;

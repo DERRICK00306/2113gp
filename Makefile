@@ -22,7 +22,7 @@ purchase_and_sell.o: purchase_and_sell.cpp purchase_and_sell.h print_portfolio.h
 borrow.o: borrow.cpp borrow.h
 	g++ -c borrow.cpp
 
-offer_bid.o: offer_bid.cpp struct.h transaction.h print_portfolio.h
+offer_bid.o: offer_bid.cpp offer_bid.h struct.h transaction.h print_portfolio.h
 	g++ -c offer_bid.cpp
 
 pay_interest.o: pay_interest.cpp pay_interest.h
@@ -34,8 +34,8 @@ evaluation.o : evaluation.cpp evaluation.h
 result.o: result.cpp result.h
 	g++ -c result.cpp
 
-main.o: main.cpp
+main.o: main.cpp print_news.h update_price.h print_market.h transaction_verification.h purchase_and_sell.h pay_interest.h offer_bid.h borrow.h transaction.h print_portfolio.h evaluation.h result.h
 	g++ -c main.cpp
 
 main: main.o print_news.o update_price.o print_market.o transaction_verification.o purchase_and_sell.o pay_interest.o offer_bid.o borrow.o transaction.o print_portfolio.o evaluation.o result.o
-	g++ main.o print_news.o update_price.o print_market.o transaction_verification.o purchase_and_sell.o pay_interest.o offer_bid.o borrow.o transaction.o print_portfolio.o evaluation.o result.o -o main
+	g++ -pedantic-errors -std=c++11 main.o print_news.o update_price.o print_market.o transaction_verification.o purchase_and_sell.o pay_interest.o offer_bid.o borrow.o transaction.o print_portfolio.o evaluation.o result.o -o main

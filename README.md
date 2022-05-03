@@ -81,7 +81,7 @@ The game will randomly draw market news from a news pool at the beginning of eac
 #### Foreign currency:
 1. Chinese Yuan
 
-#### Non-standard librearies
+#### Non-standard libraries
 No non-standard libraries are used in our program.
 
 #### Quick Start
