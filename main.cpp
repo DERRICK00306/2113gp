@@ -1,6 +1,7 @@
 #include<iostream>
 #include<string>
 #include<sstream>
+#include<iomanip>
 
 #include"print_market.h"
 #include"print_portfolio.h"
@@ -20,6 +21,7 @@ using namespace std;
 
 const int asset_number = 8;
 
+
 bool transaction_verification(Asset a[8], string action, string name, int amount, double cash);
 //verify if a transaction is possible, i.e., purchase amount does not exceed total cash or sell amount does not exceed current holding volume
 //input: asset information, buy or sell, asset name, trading amount, current Cash
@@ -30,7 +32,7 @@ void update_price(Asset a[8], double r_array[8]);
 // input: asset information, an array of return rates
 // the array of return rates will be updated in the function
 
-void offer_bid(Asset a[8], double cash, string round, Transaction * &t, int &number_t, int &t_size);
+void offer_bid(Asset a[8], double &cash, string round, Transaction * &t, int &number_t, int &t_size);
 // deal with Sir Derrick: randomly generate deals with discounts
 // input: asset information, current cash, current round, transaction history, total number of transactions, size of the dynamic array of transaction history
 
@@ -166,7 +168,7 @@ int main()
       while(true)
       {
         int command = 0;
-        cout << "Your current cash: $" << fixed << cash << "\n\n";
+        cout << "Your current cash: $" << cash << "\n\n";
 
 
         cout << "List of command: " << endl;
@@ -177,6 +179,7 @@ int main()
              << "5: Check market" << endl
              << "6: Check my portfolio" << endl
              << "0: End this turn" << endl
+             << "-1: End game" << endl
              << "----------------" << endl
              << "Input command (e.g. 3): ";
 
@@ -184,7 +187,12 @@ int main()
         cin >> command;
         cout << "\n\n";
 
-        if (command == 0)
+        if (command == -1)
+        {
+          nRound = 10;
+          break;
+        }
+        else if (command == 0)
         {
           cout << round << " ends.\n"
           << "------------------------------------------------------------" << "n";
@@ -198,7 +206,7 @@ int main()
             case 1: case 2:
             {
               print_asset_list();
-              cout << "Input asset name in all caps (e.g. APPLE): ";
+              cout << "\nInput asset name in all caps (e.g. APPLE): ";
 
               string name;
               cin >> name;
@@ -249,10 +257,13 @@ int main()
       }// end of one action
 
       pay_interest(borrow, cash);
+
       if (cash < 0)
       {
         cout << "Oops! You've been broke.\n";
+        nRound = 10;
       }
+
       nRound++;
 
     }// end of one round
@@ -270,7 +281,7 @@ int main()
 
     double total_asset_value = result(asset);
     cout << "Total asset value: $" << total_asset_value << "\n";
-    cout << "Cash: $" << fixed << cash << "\n";
+    cout << "Cash: $"  << cash << "\n";
     cout << "Borrowing: $" << borrow << "\n";
 
     int net_value = total_asset_value + cash - borrow;

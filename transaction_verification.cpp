@@ -1,5 +1,6 @@
 #include<iostream>
 #include<string>
+#include<iomanip>
 using namespace std;
 #include"struct.h"
 
@@ -21,27 +22,29 @@ bool transaction_verification(Asset a[8], string action, string name, int amount
   {
     while(true)
     {
-      cout << "Are you sure to buy" << amount << " units of "
+      cout << "Are you sure to buy " << amount << " units of "
            << name << " at a price of $" << current_price << " per unit "
-           << " with a total expense of $" << total_expense << "?\n"
+           << " with a total expense of $" << setprecision(1) << total_expense << "?\n"
            << "------------------------------" << endl
-           << "Input ('Yes'/'No'):\n";
+           << "Input ('Yes'/'No'):";
 
+      string reply;
+      cin >> reply;
 
-       if (reply == "Yes" || reply == "yes" || reply == "Y" || reply == "y")
-       {
-         cash -= total_expense;
-         break;
-       }
-       else if (reply == "No" || reply == "no" || reply == "N" || reply == "n")
-       {
-         cout << "Transaction cancelled.\n";
-         return false;
-       }
-       else
-       {
-         cout << "Invalid input. Please input 'Yes' or 'No'.\n";
-       }
+      if (reply == "Yes" || reply == "yes" || reply == "Y" || reply == "y")
+      {
+       cash -= total_expense;
+       break;
+      }
+      else if (reply == "No" || reply == "no" || reply == "N" || reply == "n")
+      {
+       cout << "Transaction cancelled.\n";
+       return false;
+      }
+      else
+      {
+       cout << "Invalid input. Please input 'Yes' or 'No'.\n";
+      }
     }
 
     if (total_expense > cash)
@@ -56,28 +59,30 @@ bool transaction_verification(Asset a[8], string action, string name, int amount
   {
     while(true)
     {
-      cout << "Are you sure to sell" << amount << " units of "
+      cout << "Are you sure to sell " << amount << " units of "
            << name << " at a price of $" << current_price << " per unit "
-           << " with a total gain of $" << total_expense << "?\n"
+           << " with a total gain of $" << setprecision(1) << total_expense << "?\n"
            << "------------------------------" << endl
-           << "Input ('Yes'/'No'):\n";
+           << "Input ('Yes'/'No'):";
 
+      string reply;
+      cin >> reply;
 
-       if (reply == "Yes" || reply == "yes" || reply == "Y" || reply == "y")
-       {
-         cash += total_expense;
+      if (reply == "Yes" || reply == "yes" || reply == "Y" || reply == "y")
+      {
+       cash += total_expense;
 
-         break;
-       }
-       else if (reply == "No" || reply == "no" || reply == "N" || reply == "n")
-       {
-         cout << "Transaction cancelled.\n";
-         return false;
-       }
-       else
-       {
-         cout << "Invalid input. Please input 'Yes' or 'No'.\n";
-       }
+       break;
+      }
+      else if (reply == "No" || reply == "no" || reply == "N" || reply == "n")
+      {
+       cout << "Transaction cancelled.\n";
+       return false;
+      }
+      else
+      {
+       cout << "Invalid input. Please input 'Yes' or 'No'.\n";
+      }
     }
 
     int current_vol = 0;

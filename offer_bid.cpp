@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include <cstdlib>
 #include <ctime>
 #include <string>
@@ -19,14 +20,41 @@ void offer_bid(Asset a[8], double &cash, string round, Transaction * &t, int &nu
   srand(time(NULL));
 
   int asset_index = rand()%8;
+  cout << "asset_index " << asset_index << "\n";
+
   int total_volume_index = rand()%5;
-  double discount_factor = (rand()%10+90)/100;
+  double discount_factor = (rand()%10+90)/100.0;
+
+  /*
 
   int possible_total_volume[5] = {150000, 200000, 2500000, 300000, 400000};
   double generate_volume = possible_total_volume[total_volume_index];
 
   int real_volume = (int) generate_volume;
   double discount_price = discount_factor * a[asset_index].current_price;
+
+  cout << "current_price " << a[asset_index].current_price << "\n"
+  << "discount_factor " << discount_factor << "\n"
+  << "discount_price " << discount_price << "\n";
+
+  double total_expense = discount_price * real_volume;
+  */
+
+
+  int possible_total_expense[5] = {400000, 500000, 550000, 600000, 650000};
+  double generate_expense = possible_total_expense[total_volume_index];
+
+  //int real_volume = (int) generate_volume;
+
+  double discount_price = discount_factor * a[asset_index].current_price;
+
+  int real_volume = (int) generate_expense/discount_price;
+  /*
+  cout << "current_price " << a[asset_index].current_price << "\n"
+  << "discount_factor " << discount_factor << "\n"
+  << "discount_price " << discount_price << "\n";
+  */
+
   double total_expense = discount_price * real_volume;
 /*
   while (true)
@@ -74,18 +102,19 @@ void offer_bid(Asset a[8], double &cash, string round, Transaction * &t, int &nu
 
     string reply;
     cin >> reply;
+    cout << "\n\n";
     if (reply == "Yes" || reply == "yes" || reply == "Y" || reply == "y")
     {
 
       if (total_expense > cash)
       {
         cout << "No enough cash. Transaction failed." << endl;
-        return false;
+        return;
       }
 
       int old_volume = a[asset_index].holding_volume;
       a[asset_index].holding_volume += real_volume;
-      a[asset_index].average_price = (old_volume * a[asset_index].average_price + amount * discount_price)/a[asset_index].holding_volume;
+      a[asset_index].average_price = (old_volume * a[asset_index].average_price + real_volume * discount_price)/a[asset_index].holding_volume;
 
       add_transaction(t, discount_price, real_volume, round, a[asset_index].asset_name, "B", number_t, t_size);
 
@@ -108,7 +137,7 @@ void offer_bid(Asset a[8], double &cash, string round, Transaction * &t, int &nu
     }
 
 
-    }
+
   }
 
 
