@@ -86,5 +86,6 @@ No non-standard libraries are used in our program.
 
 #### Quick Start
 Implement the following two lines of code to compile and execute this game.
+We used academy11 server for testing.
 > make main
  ./main
