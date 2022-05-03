@@ -102,190 +102,196 @@ void print_asset_list()
 
 int main()
 {
-    //initialization
+  //initialization
 
-    Asset asset[asset_number];
+  Asset asset[asset_number];
 
-    string asset_name_list[8] = {"APPLE", "TESLA", "MICROSOFT", "AMAZON", "OIL",
+  string asset_name_list[8] = {"APPLE", "TESLA", "MICROSOFT", "AMAZON", "OIL",
   "GOLD", "BITCOIN", "CNY"};
 
-    double current_price_list[8] = {170, 1026, 297, 3090, 100, 1950, 42500, 6380};
+  double current_price_list[8] = {170, 1026, 297, 3090, 100, 1950, 42500, 6380};
 
-    string category_list[8] = {"Stock", "Stock", "Stock", "Stock", "Commodity", "Commodity", "Cryptos", "Currency"};
+  string category_list[8] = {"Stock", "Stock", "Stock", "Stock", "Commodity", "Commodity", "Cryptos", "Currency"};
 
-    //initialize assets
-    for (int i = 0; i < 8; i++)
+  //initialize assets
+  for (int i = 0; i < 8; i++)
+  {
+    asset[i].asset_name = asset_name_list[i];
+    asset[i].current_price = current_price_list[i];
+    asset[i].holding_volume = 0;
+    asset[i].average_price = 0;
+    asset[i].catogory = category_list[i];
+  }
+  /*
+
+  asset[0] = {"APPLE",     170,  0, 0, "Stock"};
+  asset[1] = {"TESLA",     1026, 0, 0, "Stock"};
+  asset[2] = {"MICROSOFT", 297,  0, 0, "Stock"};
+  asset[3] = {"AMAZON",    3090, 0, 0, "Stock"};
+  asset[4] = {"OIL",       100,  0, 0, "Commodity"};
+  asset[5] = {"GOLD",      1950, 0, 0, "Commodity"};
+  asset[6] = {"BITCOIN",   42500,0, 0, "Cryptos"};
+  asset[7] = {"CNY",       6380, 0, 0, "Currency"};
+  */
+  int t_size = 8; // initialize transaction capacity
+  int number_t = 0; // total number of transactions
+  Transaction * t = new Transaction[t_size];
+  double cash = 1000000; //initial cash: $1,000,000
+  int borrow = 0;
+
+
+  cout << "Game rule" << endl;
+  //copy readme.md
+
+  cout << "List of command" << endl;
+  //
+
+  cout <<  "Start" << endl;
+
+  int nRound = 1;
+
+  while(nRound <= 10)
+  {
+    stringstream ss;
+    ss << nRound;
+    string round = "Round" + ss.str();
+
+    cout << "----------------------" << round << "----------------------" << "\n\n";
+    double r_array[asset_number];
+
+    update_price(asset, r_array);
+
+    print_market(asset, r_array);
+    //cout << "news" << endl;
+    print_news();
+
+    while(true)
     {
-      asset[i].asset_name = asset_name_list[i];
-      asset[i].current_price = current_price_list[i];
-      asset[i].holding_volume = 0;
-      asset[i].average_price = 0;
-      asset[i].catogory = category_list[i];
-    }
-    /*
-
-    asset[0] = {"APPLE",     170,  0, 0, "Stock"};
-    asset[1] = {"TESLA",     1026, 0, 0, "Stock"};
-    asset[2] = {"MICROSOFT", 297,  0, 0, "Stock"};
-    asset[3] = {"AMAZON",    3090, 0, 0, "Stock"};
-    asset[4] = {"OIL",       100,  0, 0, "Commodity"};
-    asset[5] = {"GOLD",      1950, 0, 0, "Commodity"};
-    asset[6] = {"BITCOIN",   42500,0, 0, "Cryptos"};
-    asset[7] = {"CNY",       6380, 0, 0, "Currency"};
-    */
-    int t_size = 8; // initialize transaction capacity
-    int number_t = 0; // total number of transactions
-    Transaction * t = new Transaction[t_size];
-    double cash = 1000000; //initial cash: $1,000,000
-    int borrow = 0;
+      int command = 0;
+      cout << "Your current cash: $" << cash << "\n\n";
 
 
-    cout << "Game rule" << endl;
-    //copy readme.md
+      cout << "List of command: " << endl;
+      cout << "1: Purchase asset" << endl
+           << "2: Sell asset" << endl
+           << "3: Borrow money from mom" << endl
+           << "4: Deal with Sir Derrick (Exclusive discount!)" << endl
+           << "5: Check market" << endl
+           << "6: Check my portfolio" << endl
+           << "7: Review past transactions" << endl
+           << "0: End this turn" << endl
+           << "-1: End game" << endl
+           << "----------------" << endl
+           << "Input command (e.g. 3): ";
 
-    cout << "List of command" << endl;
-    //
 
-    cout <<  "Start" << endl;
+      cin >> command;
+      cout << "\n\n";
 
-    int nRound = 1;
-
-    while(nRound < 10)
-    {
-      stringstream ss;
-      ss << nRound;
-      string round = "Round" + ss.str();
-
-      cout << "----------------------" << round << "----------------------" << "\n\n";
-      double r_array[asset_number];
-
-      update_price(asset, r_array);
-
-      print_market(asset, r_array);
-      //cout << "news" << endl;
-      print_news();
-
-      while(true)
+      if (command == -1)
       {
-        int command = 0;
-        cout << "Your current cash: $" << cash << "\n\n";
-
-
-        cout << "List of command: " << endl;
-        cout << "1: Purchase asset" << endl
-             << "2: Sell asset" << endl
-             << "3: Borrow money from mom" << endl
-             << "4: Deal with Sir Derrick (Exclusive discount!)" << endl
-             << "5: Check market" << endl
-             << "6: Check my portfolio" << endl
-             << "0: End this turn" << endl
-             << "-1: End game" << endl
-             << "----------------" << endl
-             << "Input command (e.g. 3): ";
-
-
-        cin >> command;
-        cout << "\n\n";
-
-        if (command == -1)
-        {
-          nRound = 10;
-          break;
-        }
-        else if (command == 0)
-        {
-          cout << round << " ends.\n"
-          << "------------------------------------------------------------" << "n";
-          break;
-        }
-
-        else if (command >= 1 && command <= 6)
-        {
-          switch(command)
-          {
-            case 1: case 2:
-            {
-              print_asset_list();
-              cout << "\nInput asset name in all caps (e.g. APPLE): ";
-
-              string name;
-              cin >> name;
-
-              cout << "Input purchase volume in integer (e.g. 150): ";
-              int vol;
-              cin >> vol;
-
-              string buy_or_sell;
-              if (command == 1)
-                buy_or_sell = "B";
-              else if (command == 2)
-                buy_or_sell = "S";
-
-              if (transaction_verification(asset, buy_or_sell, name, vol, cash))
-              {
-                purchase_or_sell(asset, buy_or_sell, name, vol, round, t, number_t, t_size); // decrease or increase cash
-              }
-              break;
-
-            }
-            case 3:
-            {
-              borrow_from_mom(borrow, cash);
-              break;
-            }
-            case 4:
-            {
-              offer_bid(asset, cash, round, t, number_t, t_size);
-              break;
-            }
-            case 5:
-            {
-              print_market(asset, r_array);
-              break;
-            }
-            case 6:
-            {
-              print_portfolio(asset);
-              break;
-            }
-
-          };
-        }
-        else
-          cout << "Invalid input. Please input your command again.\n";
-
-      }// end of one action
-
-      pay_interest(borrow, cash);
-
-      if (cash < 0)
-      {
-        cout << "Oops! You've been broke.\n";
         nRound = 10;
+        break;
+      }
+      else if (command == 0)
+      {
+        cout << round << " ends.\n"
+        << "------------------------------------------------------------" << "n";
+        break;
       }
 
-      nRound++;
+      else if (command >= 1 && command <= 6)
+      {
+        switch(command)
+        {
+          case 1: case 2:
+          {
+            print_asset_list();
+            cout << "\nInput asset name in all caps (e.g. APPLE): ";
 
-    }// end of one round
+            string name;
+            cin >> name;
 
-    //end of Game
+            cout << "Input purchase volume in integer (e.g. 150): ";
+            int vol;
+            cin >> vol;
 
-    cout << "\n\nGame ends!\n\n";
-    print_portfolio(asset);
+            string buy_or_sell;
+            if (command == 1)
+              buy_or_sell = "B";
+            else if (command == 2)
+              buy_or_sell = "S";
 
-    cout << "\n\n";
+            if (transaction_verification(asset, buy_or_sell, name, vol, cash))
+            {
+              purchase_or_sell(asset, buy_or_sell, name, vol, round, t, number_t, t_size); // decrease or increase cash
+            }
+            break;
 
-    transaction_review(t, number_t);
+          }
+          case 3:
+          {
+            borrow_from_mom(borrow, cash);
+            break;
+          }
+          case 4:
+          {
+            offer_bid(asset, cash, round, t, number_t, t_size);
+            break;
+          }
+          case 5:
+          {
+            print_market(asset, r_array);
+            break;
+          }
+          case 6:
+          {
+            print_portfolio(asset);
+            break;
+          }
+          case 7:
+          {
+            transaction_review(t, number_t);
+            break;
+          }
 
-    cout << "\n\n";
+        };
+      }
+      else
+        cout << "Invalid input. Please input your command again.\n";
 
-    double total_asset_value = result(asset);
-    cout << "Total asset value: $" << total_asset_value << "\n";
-    cout << "Cash: $"  << cash << "\n";
-    cout << "Borrowing: $" << borrow << "\n";
+    }// end of one action
 
-    int net_value = total_asset_value + cash - borrow;
+    pay_interest(borrow, cash);
 
-    evaluation(net_value);
+    if (cash < 0)
+    {
+      cout << "Oops! You've been broke.\n";
+      nRound = 10;
+    }
+
+    nRound++;
+
+  }// end of one round
+
+  //end of Game
+
+  cout << "\n\nGame ends!\n\n";
+  print_portfolio(asset);
+
+  cout << "\n\n";
+
+  transaction_review(t, number_t);
+
+  cout << "\n\n";
+
+  double total_asset_value = result(asset);
+  cout << "Total asset value: $" << total_asset_value << "\n";
+  cout << "Cash: $"  << cash << "\n";
+  cout << "Borrowing: $" << borrow << "\n";
+
+  int net_value = total_asset_value + cash - borrow;
+
+  evaluation(net_value);
 
 }
