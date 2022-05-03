@@ -22,12 +22,12 @@ void pay_interest(int borrow, double & cash)
 	index = rand() % 10;
 
   cout << "Mom: Sweetheart, I do notice you've borrowed some money from me...\n"
-       << "Mom: That's okay, you don't have to return it, but I do want more family time with you."
+       << "Mom: That's okay, you don't have to return it, but I do want more family time with you.\n"
        << "Mom: How about " << pool[index] << endl;
 
   cout << "I: Sure..." << endl;
 
-  cout << "------------------------------" << endl;
+  cout << "------------------------------\n\n" << endl;
 
   int interest_rate = rand()%4 + rand()%4 + rand()%4 + 1;
   double expense = borrow * interest_rate / 100;
