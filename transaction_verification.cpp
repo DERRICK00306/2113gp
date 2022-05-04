@@ -107,12 +107,12 @@ bool transaction_verification(Asset a[8], string action, string name, int amount
       cout << "Transaction volume exceeds current holding volume. Transaction failed." << endl;
       return false;
     }
+    cash += total_expense;
   }
   else
   {
     cout << "Invalid instruction" << endl;
     return false;
   }
-  cash += total_expense;
   return true;
 }
