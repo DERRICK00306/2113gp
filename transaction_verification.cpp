@@ -6,6 +6,7 @@ using namespace std;
 
 bool transaction_verification(Asset a[8], string action, string name, int amount, double cash)
 {
+  cout << fixed << setprecision(1);
   int current_price = 0;
   for (int i = 0; i < 8; i++)
   {

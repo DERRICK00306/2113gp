@@ -25,6 +25,7 @@ struct Transaction{
 };
 */
 void print_market(Asset a[8], double r[8]) {
+    cout << setprecision(1);
     int i;
     cout << "Current market:" << endl;
     cout << "------------------------------------------------------------" << endl; //60 "-" intotal

@@ -102,6 +102,7 @@ void print_asset_list()
 
 int main()
 {
+  cout << fixed << setprecision(1);
 
   cout << "Description: " << endl;
   cout << "This is an investment simulation game in which the player invests in the financial market and aims to generate the" << endl;
@@ -235,7 +236,7 @@ int main()
         break;
       }
 
-      else if (command >= 1 && command <= 6)
+      else if (command >= 1 && command <= 7)
       {
         switch(command)
         {

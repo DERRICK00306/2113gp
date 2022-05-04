@@ -15,6 +15,7 @@ using namespace std;
 
 void offer_bid(Asset a[8], double &cash, string round, Transaction * &t, int &number_t, int &t_size)
 {
+  cout << fixed << setprecision(1);
   cout << "Sir Derrick: I have prepared a nice deal for you. Check this..." << endl;
 
   srand(time(NULL));

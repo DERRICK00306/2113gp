@@ -6,6 +6,7 @@
 using namespace std;
 
 void print_portfolio(Asset a[8]) {
+    cout << fixed << setprecision(1);
     int i;
     cout << "The following table shows your portfolio:" << endl;
     cout << "-----------------------------------------------------------------------------------------------------" << endl; //50 - in intotal

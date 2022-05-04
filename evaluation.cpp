@@ -5,6 +5,7 @@ using namespace std;
 
 void evaluation(double net_value)
 {
+  cout << fixed << setprecision(1);
   if (net_value < 500000)
   {
     cout << "You have lost" << (1000000 - net_value) << " with an intial fund of $1,000,000.\n"

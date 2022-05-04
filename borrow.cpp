@@ -1,10 +1,11 @@
 #include <iostream>
+#include <iomanip>
 #include "borrow.h"
 
 using namespace std;
 
 void borrow_from_mom(int& borrow, double& cash){
-
+  cout << fixed << setprecision(1);
   cout << "Mom: Sweetheart, you want some money for your investment?" << endl;
 
   cout << "I: Yes Mom, I just need ..." << endl
