@@ -22,7 +22,7 @@ using namespace std;
 const int asset_number = 8;
 
 
-bool transaction_verification(Asset a[8], string action, string name, int amount, double cash);
+bool transaction_verification(Asset a[8], string action, string name, int amount, double &cash);
 //verify if a transaction is possible, i.e., purchase amount does not exceed total cash or sell amount does not exceed current holding volume
 //input: asset information, buy or sell, asset name, trading amount, current Cash
 //output: a bool value - whether the transaction is possible
@@ -222,6 +222,11 @@ int main()
 
 
       cin >> command;
+      if (cin.fail())
+      {
+        cout << "Invalid input. Please input again.\n";
+        continue;
+      }
       cout << "\n\n";
 
       if (command == -1)
@@ -248,9 +253,15 @@ int main()
             string name;
             cin >> name;
 
-            cout << "Input purchase volume in integer (e.g. 150): ";
+            cout << "Input transaction volume in integer (e.g. 150): ";
             int vol;
             cin >> vol;
+            
+            if (cin.fail())
+            {
+              cout << "Invalid input.\n";
+              break;
+            }
 
             string buy_or_sell;
             if (command == 1)
@@ -258,7 +269,8 @@ int main()
             else if (command == 2)
               buy_or_sell = "S";
 
-            if (transaction_verification(asset, buy_or_sell, name, vol, cash))
+            bool indicator = transaction_verification(asset, buy_or_sell, name, vol, cash);
+            if (indicator == true)
             {
               purchase_or_sell(asset, buy_or_sell, name, vol, round, t, number_t, t_size); // decrease or increase cash
             }

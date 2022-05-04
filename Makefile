@@ -34,7 +34,7 @@ evaluation.o : evaluation.cpp evaluation.h
 result.o: result.cpp result.h
 	g++ -c result.cpp
 
-main.o: main.cpp print_news.h update_price.h print_market.h transaction_verification.h purchase_and_sell.h pay_interest.h offer_bid.h borrow.h transaction.h print_portfolio.h evaluation.h result.h
+main.o: main.cpp print_news.h update_price.h print_market.h transaction_verification.h purchase_and_sell.h pay_interest.h offer_bid.h borrow.h transaction.h print_portfolio.h evaluation.h result.h struct.h
 	g++ -c main.cpp
 
 main: main.o print_news.o update_price.o print_market.o transaction_verification.o purchase_and_sell.o pay_interest.o offer_bid.o borrow.o transaction.o print_portfolio.o evaluation.o result.o

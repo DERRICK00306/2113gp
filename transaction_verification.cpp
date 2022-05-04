@@ -2,19 +2,26 @@
 #include<string>
 #include<iomanip>
 using namespace std;
+#include"transaction_verification.h"
 #include"struct.h"
 
-bool transaction_verification(Asset a[8], string action, string name, int amount, double cash)
+bool transaction_verification(Asset a[8], string action, string name, int amount, double &cash)
 {
   cout << fixed << setprecision(1);
   int current_price = 0;
-  for (int i = 0; i < 8; i++)
+  int m;
+  for (m = 0; m < 8; m++)
   {
-    if (a[i].asset_name == name)
+    if (a[m].asset_name == name)
     {
-      current_price = a[i].current_price;
+      current_price = a[m].current_price;
       break;
     } //consider if it is a wrong name
+  }
+  if (m==8)
+  {
+    cout << "Invalid asset name.\n";
+    return false;
   }
 
   double total_expense = current_price * amount;
@@ -25,7 +32,7 @@ bool transaction_verification(Asset a[8], string action, string name, int amount
     {
       cout << "Are you sure to buy " << amount << " units of "
            << name << " at a price of $" << current_price << " per unit "
-           << " with a total expense of $" << setprecision(1) << total_expense << "?\n"
+           << " with a total expense of $" << total_expense << "?\n"
            << "------------------------------" << endl
            << "Input ('Yes'/'No'):";
 
