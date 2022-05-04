@@ -102,7 +102,7 @@ void print_asset_list()
 
 int main()
 {
-  
+
   cout << "Description: " << endl;
   cout << "This is an investment simulation game in which the player invests in the financial market and aims to generate the" << endl;
   cout << "highest earnings. World events and news will occur while insightful investors shall take quick actions to change their" << endl;
@@ -329,4 +329,5 @@ int main()
 
   evaluation(net_value);
 
+  delete [] t;
 }
