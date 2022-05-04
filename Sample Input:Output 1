@@ -1,0 +1,1108 @@
+Description: 
+This is an investment simulation game in which the player invests in the financial market and aims to generate the
+highest earnings. World events and news will occur while insightful investors shall take quick actions to change their
+market positions given a limited number of rounds to play. Alternatively, you may consider consulting with Sir
+Derrick, an affluent, witted broker who is always willing to offer you deals with discount. Additionally, you may borrow
+from your mom to achieve your dream of being a tycoon! However, you have to pay for some family events with the
+payment proportional to your borrowing amount. Try to earn as much money as possible in ten rounds !
+
+Rules:
+The game has ten rounds in total. The player has an initial capital of $1,000,000 for investment.
+Every round:
+A board of command list will be displayed to show the available actions in each turn:
+1. Updated asset prices will be displayed and breaking news might occur.
+2. You may purchase assets in the market directly, make a deal with a third party, or borrow money from mom.
+3. The player may check their current holdings, gains, or losses anytime.
+4. The player may finish this turn anytime.
+5. There's no interests for your borrowing, since you borrowed from your mom. Nonetheless, Mom will relentlessly
+   ask you for some favors if she has lent you some money, which entails payment proportional to your borrowing
+   amount.
+6. You may end the round when you finish all actions you deem necessary and proceed to the next round.
+7. Never have your cash down to zero. You will automatically become bankrupt and the game will end immediately.
+8. The game will end automatically after ten rounds and your net investment return will be displayed.
+
+Notes: 
+1. The third-party provides bulk purchase opportunities. The deals come with discounted prices but always high
+   quantities – the player may have to commit a significant amount of money to enjoy a discount.
+2. The total amount of borrowing may not exceed $1,000,000. Loans will be deducted from your total earnings at
+   the end of the game and you can not repay them in advance.
+3. You may choose to end the game in advance by typing in '-1' in the command panel.
+4. A list of transactions, the final holding asset and return will be printed at the end of the game (or when the player
+   goes bankrupt).
+
+Let's start to play the game! Try to generate as more value as possible while not to be bankrupt. 
+
+Game rule
+List of command
+Start
+----------------------Round1----------------------
+
+Current market:
+------------------------------------------------------------
+| Asset name | Current Price |        Return |     Category |
+|      APPLE |         171.7 |          1.0% |        Stock |
+|      TESLA |         943.9 |         -8.0% |        Stock |
+|  MICROSOFT |         320.8 |          8.0% |        Stock |
+|     AMAZON |        3090.0 |          0.0% |        Stock |
+|        OIL |         109.0 |          9.0% |    Commodity |
+|       GOLD |        2028.0 |          4.0% |    Commodity |
+|    BITCOIN |       46325.0 |          9.0% |      Cryptos |
+|        CNY |        5997.2 |         -6.0% |     Currency |
+------------------------------------------------------------
+
+Todays' news :
+US government announce that they will release 40 millions bbl crude oil in the market.
+
+Your current cash: $1000000.0
+
+List of command: 
+1: Purchase asset
+2: Sell asset
+3: Borrow money from mom
+4: Deal with Sir Derrick (Exclusive discount!)
+5: Check market
+6: Check my portfolio
+7: Review past transactions
+0: End this turn
+-1: End game
+----------------
+Input command (e.g. 3): 1
+
+
+Asset list
+------------------------------------------------------------
+
+Stocks:
+APPLE
+TESLA
+MICROSOFT
+AMAZON
+
+Commodities:
+OIL
+GOLD
+
+Cryptos:
+BITCOIN
+
+Foreign currency:
+CNY (Chinese Yuan)
+
+Input asset name in all caps (e.g. APPLE): OIL
+Input transaction volume in integer (e.g. 150): 100
+Are you sure to buy 100 units of OIL at a price of $109 per unit  with a total expense of $10900.0?
+------------------------------
+Input ('Yes'/'No'):Yes
+Your current portfolio: 
+The following table shows your portfolio:
+-----------------------------------------------------------------------------------------------------
+| Asset_name | Current_price | Average_price |  Volume | Total_earning | Return_rate |     Category |
+|      APPLE |         171.7 |           0.0 |       0 |           0.0 |          0% |        Stock |
+|      TESLA |         943.9 |           0.0 |       0 |           0.0 |          0% |        Stock |
+|  MICROSOFT |         320.8 |           0.0 |       0 |           0.0 |          0% |        Stock |
+|     AMAZON |        3090.0 |           0.0 |       0 |           0.0 |          0% |        Stock |
+|        OIL |         109.0 |         109.0 |     100 |           0.0 |          0% |    Commodity |
+|       GOLD |        2028.0 |           0.0 |       0 |           0.0 |          0% |    Commodity |
+|    BITCOIN |       46325.0 |           0.0 |       0 |           0.0 |          0% |      Cryptos |
+|        CNY |        5997.2 |           0.0 |       0 |           0.0 |          0% |     Currency |
+-----------------------------------------------------------------------------------------------------
+Your current cash: $989100.0
+
+List of command: 
+1: Purchase asset
+2: Sell asset
+3: Borrow money from mom
+4: Deal with Sir Derrick (Exclusive discount!)
+5: Check market
+6: Check my portfolio
+7: Review past transactions
+0: End this turn
+-1: End game
+----------------
+Input command (e.g. 3): 0
+
+
+Round1 ends.
+------------------------------------------------------------
+Mom: Sweetheart, I do notice you've borrowed some money from me...
+Mom: That's okay, you don't have to return it, but I do want more family time with you.
+Mom: How about you go shopping with me?
+I: Sure...
+------------------------------
+
+
+Event bill: $0.0
+Current cash: $989100.0
+------------------------------
+----------------------Round2----------------------
+
+Current market:
+------------------------------------------------------------
+| Asset name | Current Price |        Return |     Category |
+|      APPLE |         188.9 |         10.0% |        Stock |
+|      TESLA |         915.6 |         -3.0% |        Stock |
+|  MICROSOFT |         343.2 |          7.0% |        Stock |
+|     AMAZON |        3059.1 |         -1.0% |        Stock |
+|        OIL |         125.4 |         15.0% |    Commodity |
+|       GOLD |        2190.2 |          8.0% |    Commodity |
+|    BITCOIN |       44008.8 |         -5.0% |      Cryptos |
+|        CNY |        6417.0 |          7.0% |     Currency |
+------------------------------------------------------------
+
+Todays' news :
+Windows 20 will be free and available on Microsoft's website soon!
+
+Your current cash: $989100.0
+
+List of command: 
+1: Purchase asset
+2: Sell asset
+3: Borrow money from mom
+4: Deal with Sir Derrick (Exclusive discount!)
+5: Check market
+6: Check my portfolio
+7: Review past transactions
+0: End this turn
+-1: End game
+----------------
+Input command (e.g. 3): 4
+
+
+Sir Derrick: I have prepared a nice deal for you. Check this...
+asset_index 6
+Deal: A total of 11 units of BITCOIN at a price of $43128.6 per unit (while the market price is currently $44008.8) with a total expense of $474414.3.
+------------------------------
+Sir Derrick: That's real discount! Are you taking this great opportunity? ('Yes'/'No')
+Yes
+
+
+The following table shows your portfolio:
+-----------------------------------------------------------------------------------------------------
+| Asset_name | Current_price | Average_price |  Volume | Total_earning | Return_rate |     Category |
+|      APPLE |         188.9 |           0.0 |       0 |           0.0 |          0% |        Stock |
+|      TESLA |         915.6 |           0.0 |       0 |           0.0 |          0% |        Stock |
+|  MICROSOFT |         343.2 |           0.0 |       0 |           0.0 |          0% |        Stock |
+|     AMAZON |        3059.1 |           0.0 |       0 |           0.0 |          0% |        Stock |
+|        OIL |         125.4 |         109.0 |     100 |        1635.0 |         14% |    Commodity |
+|       GOLD |        2190.2 |           0.0 |       0 |           0.0 |          0% |    Commodity |
+|    BITCOIN |       44008.8 |       43128.6 |      11 |        9681.9 |          2% |      Cryptos |
+|        CNY |        6417.0 |           0.0 |       0 |           0.0 |          0% |     Currency |
+-----------------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------
+Sir Derrick: See you next round!
+Your current cash: $514685.7
+
+List of command: 
+1: Purchase asset
+2: Sell asset
+3: Borrow money from mom
+4: Deal with Sir Derrick (Exclusive discount!)
+5: Check market
+6: Check my portfolio
+7: Review past transactions
+0: End this turn
+-1: End game
+----------------
+Input command (e.g. 3): 0
+
+
+Round2 ends.
+------------------------------------------------------------
+Mom: Sweetheart, I do notice you've borrowed some money from me...
+Mom: That's okay, you don't have to return it, but I do want more family time with you.
+Mom: How about a gym night together? They are offering family membership in discount.
+I: Sure...
+------------------------------
+
+
+Event bill: $0.0
+Current cash: $514685.7
+------------------------------
+----------------------Round3----------------------
+
+Current market:
+------------------------------------------------------------
+| Asset name | Current Price |        Return |     Category |
+|      APPLE |         198.3 |          5.0% |        Stock |
+|      TESLA |        1007.2 |         10.0% |        Stock |
+|  MICROSOFT |         336.3 |         -2.0% |        Stock |
+|     AMAZON |        3212.1 |          5.0% |        Stock |
+|        OIL |         116.6 |         -7.0% |    Commodity |
+|       GOLD |        2409.3 |         10.0% |    Commodity |
+|    BITCOIN |       47089.4 |          7.0% |      Cryptos |
+|        CNY |        7058.7 |         10.0% |     Currency |
+------------------------------------------------------------
+
+Todays' news :
+Statistics show that Amozon is continous doing well in last season.
+
+Your current cash: $514685.7
+
+List of command: 
+1: Purchase asset
+2: Sell asset
+3: Borrow money from mom
+4: Deal with Sir Derrick (Exclusive discount!)
+5: Check market
+6: Check my portfolio
+7: Review past transactions
+0: End this turn
+-1: End game
+----------------
+Input command (e.g. 3): 3
+
+
+Mom: Sweetheart, you want some money for your investment?
+I: Yes Mom, I just need ...
+Input your amount: (an integer) 
+200000
+------------------------------
+Mom : That's a lot of money! You'd better spend it wisely.
+You have successfully borrowed $200000 from your mom.
+Total borrowing: $200000
+Current cash: $714685.7
+------------------------------
+Your current cash: $714685.7
+
+List of command: 
+1: Purchase asset
+2: Sell asset
+3: Borrow money from mom
+4: Deal with Sir Derrick (Exclusive discount!)
+5: Check market
+6: Check my portfolio
+7: Review past transactions
+0: End this turn
+-1: End game
+----------------
+Input command (e.g. 3): 6
+
+
+The following table shows your portfolio:
+-----------------------------------------------------------------------------------------------------
+| Asset_name | Current_price | Average_price |  Volume | Total_earning | Return_rate |     Category |
+|      APPLE |         198.3 |           0.0 |       0 |           0.0 |          0% |        Stock |
+|      TESLA |        1007.2 |           0.0 |       0 |           0.0 |          0% |        Stock |
+|  MICROSOFT |         336.3 |           0.0 |       0 |           0.0 |          0% |        Stock |
+|     AMAZON |        3212.1 |           0.0 |       0 |           0.0 |          0% |        Stock |
+|        OIL |         116.6 |         109.0 |     100 |         757.5 |          6% |    Commodity |
+|       GOLD |        2409.3 |           0.0 |       0 |           0.0 |          0% |    Commodity |
+|    BITCOIN |       47089.4 |       43128.6 |      11 |       43568.7 |          9% |      Cryptos |
+|        CNY |        7058.7 |           0.0 |       0 |           0.0 |          0% |     Currency |
+-----------------------------------------------------------------------------------------------------
+Your current cash: $714685.7
+
+List of command: 
+1: Purchase asset
+2: Sell asset
+3: Borrow money from mom
+4: Deal with Sir Derrick (Exclusive discount!)
+5: Check market
+6: Check my portfolio
+7: Review past transactions
+0: End this turn
+-1: End game
+----------------
+Input command (e.g. 3): 0
+
+
+Round3 ends.
+------------------------------------------------------------
+Mom: Sweetheart, I do notice you've borrowed some money from me...
+Mom: That's okay, you don't have to return it, but I do want more family time with you.
+Mom: How about we pick up your little sister from school this afternoon together? You can treat her with some nice candy.
+I: Sure...
+------------------------------
+
+
+Event bill: $18000.0
+Current cash: $696685.7
+------------------------------
+----------------------Round4----------------------
+
+Current market:
+------------------------------------------------------------
+| Asset name | Current Price |        Return |     Category |
+|      APPLE |         200.3 |          1.0% |        Stock |
+|      TESLA |         976.9 |         -3.0% |        Stock |
+|  MICROSOFT |         376.7 |         12.0% |        Stock |
+|     AMAZON |        3372.7 |          5.0% |        Stock |
+|        OIL |         127.1 |          9.0% |    Commodity |
+|       GOLD |        2409.3 |          0.0% |    Commodity |
+|    BITCOIN |       51327.4 |          9.0% |      Cryptos |
+|        CNY |        6988.1 |         -1.0% |     Currency |
+------------------------------------------------------------
+
+Todays' news :
+Buffet predicts that Microsoft's share price will reach 500 dollar in next month.
+
+Your current cash: $696685.7
+
+List of command: 
+1: Purchase asset
+2: Sell asset
+3: Borrow money from mom
+4: Deal with Sir Derrick (Exclusive discount!)
+5: Check market
+6: Check my portfolio
+7: Review past transactions
+0: End this turn
+-1: End game
+----------------
+Input command (e.g. 3): 2
+
+
+Asset list
+------------------------------------------------------------
+
+Stocks:
+APPLE
+TESLA
+MICROSOFT
+AMAZON
+
+Commodities:
+OIL
+GOLD
+
+Cryptos:
+BITCOIN
+
+Foreign currency:
+CNY (Chinese Yuan)
+
+Input asset name in all caps (e.g. APPLE): BITCOIN
+Input transaction volume in integer (e.g. 150): 10
+Are you sure to sell 10 units of BITCOIN at a price of $51327 per unit  with a total gain of $513270.0?
+------------------------------
+Input ('Yes'/'No'):Yes
+Your current portfolio: 
+The following table shows your portfolio:
+-----------------------------------------------------------------------------------------------------
+| Asset_name | Current_price | Average_price |  Volume | Total_earning | Return_rate |     Category |
+|      APPLE |         200.3 |           0.0 |       0 |           0.0 |          0% |        Stock |
+|      TESLA |         976.9 |           0.0 |       0 |           0.0 |          0% |        Stock |
+|  MICROSOFT |         376.7 |           0.0 |       0 |           0.0 |          0% |        Stock |
+|     AMAZON |        3372.7 |           0.0 |       0 |           0.0 |          0% |        Stock |
+|        OIL |         127.1 |         109.0 |     100 |        1806.7 |         16% |    Commodity |
+|       GOLD |        2409.3 |           0.0 |       0 |           0.0 |          0% |    Commodity |
+|    BITCOIN |       51327.4 |      -38859.7 |       1 |       90187.1 |       -232% |      Cryptos |
+|        CNY |        6988.1 |           0.0 |       0 |           0.0 |          0% |     Currency |
+-----------------------------------------------------------------------------------------------------
+Your current cash: $1209955.7
+
+List of command: 
+1: Purchase asset
+2: Sell asset
+3: Borrow money from mom
+4: Deal with Sir Derrick (Exclusive discount!)
+5: Check market
+6: Check my portfolio
+7: Review past transactions
+0: End this turn
+-1: End game
+----------------
+Input command (e.g. 3): 4
+
+
+Sir Derrick: I have prepared a nice deal for you. Check this...
+asset_index 0
+Deal: A total of 3025 units of APPLE at a price of $198.3 per unit (while the market price is currently $200.3) with a total expense of $599838.3.
+------------------------------
+Sir Derrick: That's real discount! Are you taking this great opportunity? ('Yes'/'No')
+Yes
+
+
+The following table shows your portfolio:
+-----------------------------------------------------------------------------------------------------
+| Asset_name | Current_price | Average_price |  Volume | Total_earning | Return_rate |     Category |
+|      APPLE |         200.3 |         198.3 |    3025 |        6059.0 |          1% |        Stock |
+|      TESLA |         976.9 |           0.0 |       0 |           0.0 |          0% |        Stock |
+|  MICROSOFT |         376.7 |           0.0 |       0 |           0.0 |          0% |        Stock |
+|     AMAZON |        3372.7 |           0.0 |       0 |           0.0 |          0% |        Stock |
+|        OIL |         127.1 |         109.0 |     100 |        1806.7 |         16% |    Commodity |
+|       GOLD |        2409.3 |           0.0 |       0 |           0.0 |          0% |    Commodity |
+|    BITCOIN |       51327.4 |      -38859.7 |       1 |       90187.1 |       -232% |      Cryptos |
+|        CNY |        6988.1 |           0.0 |       0 |           0.0 |          0% |     Currency |
+-----------------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------
+Sir Derrick: See you next round!
+Your current cash: $610117.3
+
+List of command: 
+1: Purchase asset
+2: Sell asset
+3: Borrow money from mom
+4: Deal with Sir Derrick (Exclusive discount!)
+5: Check market
+6: Check my portfolio
+7: Review past transactions
+0: End this turn
+-1: End game
+----------------
+Input command (e.g. 3): 0
+
+
+Round4 ends.
+------------------------------------------------------------
+Mom: Sweetheart, I do notice you've borrowed some money from me...
+Mom: That's okay, you don't have to return it, but I do want more family time with you.
+Mom: How about you accompany me to go to Aunt Jensen's wedding next week?
+I: Sure...
+------------------------------
+
+
+Event bill: $2000.0
+Current cash: $608117.3
+------------------------------
+----------------------Round5----------------------
+
+Current market:
+------------------------------------------------------------
+| Asset name | Current Price |        Return |     Category |
+|      APPLE |         226.3 |         13.0% |        Stock |
+|      TESLA |         879.3 |        -10.0% |        Stock |
+|  MICROSOFT |         429.5 |         14.0% |        Stock |
+|     AMAZON |        3507.6 |          4.0% |        Stock |
+|        OIL |         141.0 |         11.0% |    Commodity |
+|       GOLD |        2553.8 |          6.0% |    Commodity |
+|    BITCOIN |       55433.6 |          8.0% |      Cryptos |
+|        CNY |        6359.2 |         -9.0% |     Currency |
+------------------------------------------------------------
+
+Todays' news :
+Apple will provide discount price for their employee.
+
+Your current cash: $608117.3
+
+List of command: 
+1: Purchase asset
+2: Sell asset
+3: Borrow money from mom
+4: Deal with Sir Derrick (Exclusive discount!)
+5: Check market
+6: Check my portfolio
+7: Review past transactions
+0: End this turn
+-1: End game
+----------------
+Input command (e.g. 3): 0
+
+
+Round5 ends.
+------------------------------------------------------------
+Mom: Sweetheart, I do notice you've borrowed some money from me...
+Mom: That's okay, you don't have to return it, but I do want more family time with you.
+Mom: How about we go for a family trip together next week?
+I: Sure...
+------------------------------
+
+
+Event bill: $14000.0
+Current cash: $594117.3
+------------------------------
+----------------------Round6----------------------
+
+Current market:
+------------------------------------------------------------
+| Asset name | Current Price |        Return |     Category |
+|      APPLE |         217.3 |         -4.0% |        Stock |
+|      TESLA |         835.3 |         -5.0% |        Stock |
+|  MICROSOFT |         463.8 |          8.0% |        Stock |
+|     AMAZON |        3577.7 |          2.0% |        Stock |
+|        OIL |         150.9 |          7.0% |    Commodity |
+|       GOLD |        2911.4 |         14.0% |    Commodity |
+|    BITCOIN |       53216.3 |         -4.0% |      Cryptos |
+|        CNY |        6740.7 |          6.0% |     Currency |
+------------------------------------------------------------
+
+Todays' news :
+Elon Mask announce their firm will use 30% of its revenue to invest in bitcoin.
+
+Your current cash: $594117.3
+
+List of command: 
+1: Purchase asset
+2: Sell asset
+3: Borrow money from mom
+4: Deal with Sir Derrick (Exclusive discount!)
+5: Check market
+6: Check my portfolio
+7: Review past transactions
+0: End this turn
+-1: End game
+----------------
+Input command (e.g. 3): 1
+
+
+Asset list
+------------------------------------------------------------
+
+Stocks:
+APPLE
+TESLA
+MICROSOFT
+AMAZON
+
+Commodities:
+OIL
+GOLD
+
+Cryptos:
+BITCOIN
+
+Foreign currency:
+CNY (Chinese Yuan)
+
+Input asset name in all caps (e.g. APPLE): AMAZON
+Input transaction volume in integer (e.g. 150): 20
+Are you sure to buy 20 units of AMAZON at a price of $3577 per unit  with a total expense of $71540.0?
+------------------------------
+Input ('Yes'/'No'):Yes
+Your current portfolio: 
+The following table shows your portfolio:
+-----------------------------------------------------------------------------------------------------
+| Asset_name | Current_price | Average_price |  Volume | Total_earning | Return_rate |     Category |
+|      APPLE |         217.3 |         198.3 |    3025 |       57439.1 |          9% |        Stock |
+|      TESLA |         835.3 |           0.0 |       0 |           0.0 |          0% |        Stock |
+|  MICROSOFT |         463.8 |           0.0 |       0 |           0.0 |          0% |        Stock |
+|     AMAZON |        3577.7 |        3577.7 |      20 |           0.0 |          0% |        Stock |
+|        OIL |         150.9 |         109.0 |     100 |        4191.8 |         38% |    Commodity |
+|       GOLD |        2911.4 |           0.0 |       0 |           0.0 |          0% |    Commodity |
+|    BITCOIN |       53216.3 |      -38859.7 |       1 |       92076.0 |       -236% |      Cryptos |
+|        CNY |        6740.7 |           0.0 |       0 |           0.0 |          0% |     Currency |
+-----------------------------------------------------------------------------------------------------
+Your current cash: $522577.3
+
+List of command: 
+1: Purchase asset
+2: Sell asset
+3: Borrow money from mom
+4: Deal with Sir Derrick (Exclusive discount!)
+5: Check market
+6: Check my portfolio
+7: Review past transactions
+0: End this turn
+-1: End game
+----------------
+Input command (e.g. 3): 5
+
+
+Current market:
+------------------------------------------------------------
+| Asset name | Current Price |        Return |     Category |
+|      APPLE |         217.3 |         -4.0% |        Stock |
+|      TESLA |         835.3 |         -5.0% |        Stock |
+|  MICROSOFT |         463.8 |          8.0% |        Stock |
+|     AMAZON |        3577.7 |          2.0% |        Stock |
+|        OIL |         150.9 |          7.0% |    Commodity |
+|       GOLD |        2911.4 |         14.0% |    Commodity |
+|    BITCOIN |       53216.3 |         -4.0% |      Cryptos |
+|        CNY |        6740.7 |          6.0% |     Currency |
+------------------------------------------------------------
+
+Your current cash: $522577.3
+
+List of command: 
+1: Purchase asset
+2: Sell asset
+3: Borrow money from mom
+4: Deal with Sir Derrick (Exclusive discount!)
+5: Check market
+6: Check my portfolio
+7: Review past transactions
+0: End this turn
+-1: End game
+----------------
+Input command (e.g. 3): 0
+
+
+Round6 ends.
+------------------------------------------------------------
+Mom: Sweetheart, I do notice you've borrowed some money from me...
+Mom: That's okay, you don't have to return it, but I do want more family time with you.
+Mom: How about a scarf as a Mother's Day gift?
+I: Sure...
+------------------------------
+
+
+Event bill: $14000.0
+Current cash: $508577.3
+------------------------------
+----------------------Round7----------------------
+
+Current market:
+------------------------------------------------------------
+| Asset name | Current Price |        Return |     Category |
+|      APPLE |         199.9 |         -8.0% |        Stock |
+|      TESLA |         860.3 |          3.0% |        Stock |
+|  MICROSOFT |         510.2 |         10.0% |        Stock |
+|     AMAZON |        4007.0 |         12.0% |        Stock |
+|        OIL |         155.4 |          3.0% |    Commodity |
+|       GOLD |        2998.7 |          3.0% |    Commodity |
+|    BITCOIN |       48426.8 |         -9.0% |      Cryptos |
+|        CNY |        7212.6 |          7.0% |     Currency |
+------------------------------------------------------------
+
+Todays' news :
+More and more companies accept payment by bitcoin.
+
+Your current cash: $508577.3
+
+List of command: 
+1: Purchase asset
+2: Sell asset
+3: Borrow money from mom
+4: Deal with Sir Derrick (Exclusive discount!)
+5: Check market
+6: Check my portfolio
+7: Review past transactions
+0: End this turn
+-1: End game
+----------------
+Input command (e.g. 3): 4
+
+
+Sir Derrick: I have prepared a nice deal for you. Check this...
+asset_index 7
+Deal: A total of 81 units of CNY at a price of $6707.7 per unit (while the market price is currently $7212.6) with a total expense of $543324.4.
+------------------------------
+Sir Derrick: That's real discount! Are you taking this great opportunity? ('Yes'/'No')
+Yes
+
+
+No enough cash. Transaction failed.
+Your current cash: $508577.3
+
+List of command: 
+1: Purchase asset
+2: Sell asset
+3: Borrow money from mom
+4: Deal with Sir Derrick (Exclusive discount!)
+5: Check market
+6: Check my portfolio
+7: Review past transactions
+0: End this turn
+-1: End game
+----------------
+Input command (e.g. 3): 1
+
+
+Asset list
+------------------------------------------------------------
+
+Stocks:
+APPLE
+TESLA
+MICROSOFT
+AMAZON
+
+Commodities:
+OIL
+GOLD
+
+Cryptos:
+BITCOIN
+
+Foreign currency:
+CNY (Chinese Yuan)
+
+Input asset name in all caps (e.g. APPLE): TESLA
+Input transaction volume in integer (e.g. 150): 50
+Are you sure to buy 50 units of TESLA at a price of $860 per unit  with a total expense of $43000.0?
+------------------------------
+Input ('Yes'/'No'):Yes
+Your current portfolio: 
+The following table shows your portfolio:
+-----------------------------------------------------------------------------------------------------
+| Asset_name | Current_price | Average_price |  Volume | Total_earning | Return_rate |     Category |
+|      APPLE |         199.9 |         198.3 |    3025 |        4856.9 |          0% |        Stock |
+|      TESLA |         860.3 |         860.3 |      50 |           0.0 |          0% |        Stock |
+|  MICROSOFT |         510.2 |           0.0 |       0 |           0.0 |          0% |        Stock |
+|     AMAZON |        4007.0 |        3577.7 |      20 |        8586.5 |         12% |        Stock |
+|        OIL |         155.4 |         109.0 |     100 |        4644.5 |         42% |    Commodity |
+|       GOLD |        2998.7 |           0.0 |       0 |           0.0 |          0% |    Commodity |
+|    BITCOIN |       48426.8 |      -38859.7 |       1 |       87286.5 |       -224% |      Cryptos |
+|        CNY |        7212.6 |           0.0 |       0 |           0.0 |          0% |     Currency |
+-----------------------------------------------------------------------------------------------------
+Your current cash: $465577.3
+
+List of command: 
+1: Purchase asset
+2: Sell asset
+3: Borrow money from mom
+4: Deal with Sir Derrick (Exclusive discount!)
+5: Check market
+6: Check my portfolio
+7: Review past transactions
+0: End this turn
+-1: End game
+----------------
+Input command (e.g. 3): 0
+
+
+Round7 ends.
+------------------------------------------------------------
+Mom: Sweetheart, I do notice you've borrowed some money from me...
+Mom: That's okay, you don't have to return it, but I do want more family time with you.
+Mom: How about we go for a family trip together next week?
+I: Sure...
+------------------------------
+
+
+Event bill: $14000.0
+Current cash: $451577.3
+------------------------------
+----------------------Round8----------------------
+
+Current market:
+------------------------------------------------------------
+| Asset name | Current Price |        Return |     Category |
+|      APPLE |         205.9 |          3.0% |        Stock |
+|      TESLA |         886.2 |          3.0% |        Stock |
+|  MICROSOFT |         566.3 |         11.0% |        Stock |
+|     AMAZON |        4568.0 |         14.0% |        Stock |
+|        OIL |         178.8 |         15.0% |    Commodity |
+|       GOLD |        2998.7 |          0.0% |    Commodity |
+|    BITCOIN |       50848.1 |          5.0% |      Cryptos |
+|        CNY |        7501.1 |          4.0% |     Currency |
+------------------------------------------------------------
+
+Todays' news :
+There is saying that thier firm are currently invent driverless airplane.
+
+Your current cash: $451577.3
+
+List of command: 
+1: Purchase asset
+2: Sell asset
+3: Borrow money from mom
+4: Deal with Sir Derrick (Exclusive discount!)
+5: Check market
+6: Check my portfolio
+7: Review past transactions
+0: End this turn
+-1: End game
+----------------
+Input command (e.g. 3): 7
+
+
+The table below shows your Histroy: 
+-------------------------------------------------------------
+|       Name |     Price |   Volume |        Time |  Status |
+|        OIL |     109.0 |      100 |      Round1 |       B |
+|    BITCOIN |   43128.6 |       11 |      Round2 |       B |
+|    BITCOIN |   51327.4 |       10 |      Round4 |       S |
+|      APPLE |     198.3 |     3025 |      Round4 |       B |
+|     AMAZON |    3577.7 |       20 |      Round6 |       B |
+|      TESLA |     860.3 |       50 |      Round7 |       B |
+-------------------------------------------------------------
+Your current cash: $451577.3
+
+List of command: 
+1: Purchase asset
+2: Sell asset
+3: Borrow money from mom
+4: Deal with Sir Derrick (Exclusive discount!)
+5: Check market
+6: Check my portfolio
+7: Review past transactions
+0: End this turn
+-1: End game
+----------------
+Input command (e.g. 3): 2
+
+
+Asset list
+------------------------------------------------------------
+
+Stocks:
+APPLE
+TESLA
+MICROSOFT
+AMAZON
+
+Commodities:
+OIL
+GOLD
+
+Cryptos:
+BITCOIN
+
+Foreign currency:
+CNY (Chinese Yuan)
+
+Input asset name in all caps (e.g. APPLE): APPLE
+Input transaction volume in integer (e.g. 150): 2000
+Are you sure to sell 2000 units of APPLE at a price of $205 per unit  with a total gain of $410000.0?
+------------------------------
+Input ('Yes'/'No'):Yes
+Your current portfolio: 
+The following table shows your portfolio:
+-----------------------------------------------------------------------------------------------------
+| Asset_name | Current_price | Average_price |  Volume | Total_earning | Return_rate |     Category |
+|      APPLE |         205.9 |         183.5 |    1025 |       22997.7 |         12% |        Stock |
+|      TESLA |         886.2 |         860.3 |      50 |        1290.5 |          3% |        Stock |
+|  MICROSOFT |         566.3 |           0.0 |       0 |           0.0 |          0% |        Stock |
+|     AMAZON |        4568.0 |        3577.7 |      20 |       19806.2 |         27% |        Stock |
+|        OIL |         178.8 |         109.0 |     100 |        6976.2 |         64% |    Commodity |
+|       GOLD |        2998.7 |           0.0 |       0 |           0.0 |          0% |    Commodity |
+|    BITCOIN |       50848.1 |      -38859.7 |       1 |       89707.9 |       -230% |      Cryptos |
+|        CNY |        7501.1 |           0.0 |       0 |           0.0 |          0% |     Currency |
+-----------------------------------------------------------------------------------------------------
+Your current cash: $861577.3
+
+List of command: 
+1: Purchase asset
+2: Sell asset
+3: Borrow money from mom
+4: Deal with Sir Derrick (Exclusive discount!)
+5: Check market
+6: Check my portfolio
+7: Review past transactions
+0: End this turn
+-1: End game
+----------------
+Input command (e.g. 3): 0
+
+
+Round8 ends.
+------------------------------------------------------------
+Mom: Sweetheart, I do notice you've borrowed some money from me...
+Mom: That's okay, you don't have to return it, but I do want more family time with you.
+Mom: How about you accompany me to go to Aunt Jensen's wedding next week?
+I: Sure...
+------------------------------
+
+
+Event bill: $14000.0
+Current cash: $847577.3
+------------------------------
+----------------------Round9----------------------
+
+Current market:
+------------------------------------------------------------
+| Asset name | Current Price |        Return |     Category |
+|      APPLE |         232.7 |         13.0% |        Stock |
+|      TESLA |         939.3 |          6.0% |        Stock |
+|  MICROSOFT |         521.0 |         -8.0% |        Stock |
+|     AMAZON |        4842.1 |          6.0% |        Stock |
+|        OIL |         184.1 |          3.0% |    Commodity |
+|       GOLD |        3178.6 |          6.0% |    Commodity |
+|    BITCOIN |       52882.1 |          4.0% |      Cryptos |
+|        CNY |        7651.1 |          2.0% |     Currency |
+------------------------------------------------------------
+
+Todays' news :
+US government announce that they will release 40 millions bbl crude oil in the market.
+
+Your current cash: $847577.3
+
+List of command: 
+1: Purchase asset
+2: Sell asset
+3: Borrow money from mom
+4: Deal with Sir Derrick (Exclusive discount!)
+5: Check market
+6: Check my portfolio
+7: Review past transactions
+0: End this turn
+-1: End game
+----------------
+Input command (e.g. 3): 0
+
+
+Round9 ends.
+------------------------------------------------------------
+Mom: Sweetheart, I do notice you've borrowed some money from me...
+Mom: That's okay, you don't have to return it, but I do want more family time with you.
+Mom: How about we go for a fancy dinner tonight?
+I: Sure...
+------------------------------
+
+
+Event bill: $12000.0
+Current cash: $835577.3
+------------------------------
+----------------------Round10----------------------
+
+Current market:
+------------------------------------------------------------
+| Asset name | Current Price |        Return |     Category |
+|      APPLE |         244.3 |          5.0% |        Stock |
+|      TESLA |         967.5 |          3.0% |        Stock |
+|  MICROSOFT |         500.2 |         -4.0% |        Stock |
+|     AMAZON |        5520.0 |         14.0% |        Stock |
+|        OIL |         178.6 |         -3.0% |    Commodity |
+|       GOLD |        3083.3 |         -3.0% |    Commodity |
+|    BITCOIN |       59756.7 |         13.0% |      Cryptos |
+|        CNY |        7268.6 |         -5.0% |     Currency |
+------------------------------------------------------------
+
+Todays' news :
+Saudi Arabia government announce they will reduce their oil production.
+
+Your current cash: $835577.3
+
+List of command: 
+1: Purchase asset
+2: Sell asset
+3: Borrow money from mom
+4: Deal with Sir Derrick (Exclusive discount!)
+5: Check market
+6: Check my portfolio
+7: Review past transactions
+0: End this turn
+-1: End game
+----------------
+Input command (e.g. 3): 1
+
+
+Asset list
+------------------------------------------------------------
+
+Stocks:
+APPLE
+TESLA
+MICROSOFT
+AMAZON
+
+Commodities:
+OIL
+GOLD
+
+Cryptos:
+BITCOIN
+
+Foreign currency:
+CNY (Chinese Yuan)
+
+Input asset name in all caps (e.g. APPLE): CNY
+Input transaction volume in integer (e.g. 150): 500 
+Are you sure to buy 500 units of CNY at a price of $7268 per unit  with a total expense of $3634000.0?
+------------------------------
+Input ('Yes'/'No'):No
+Transaction cancelled.
+Your current cash: $835577.3
+
+List of command: 
+1: Purchase asset
+2: Sell asset
+3: Borrow money from mom
+4: Deal with Sir Derrick (Exclusive discount!)
+5: Check market
+6: Check my portfolio
+7: Review past transactions
+0: End this turn
+-1: End game
+----------------
+Input command (e.g. 3): 1
+
+
+Asset list
+------------------------------------------------------------
+
+Stocks:
+APPLE
+TESLA
+MICROSOFT
+AMAZON
+
+Commodities:
+OIL
+GOLD
+
+Cryptos:
+BITCOIN
+
+Foreign currency:
+CNY (Chinese Yuan)
+
+Input asset name in all caps (e.g. APPLE): CNY
+Input transaction volume in integer (e.g. 150): 50
+Are you sure to buy 50 units of CNY at a price of $7268 per unit  with a total expense of $363400.0?
+------------------------------
+Input ('Yes'/'No'):Yes
+Your current portfolio: 
+The following table shows your portfolio:
+-----------------------------------------------------------------------------------------------------
+| Asset_name | Current_price | Average_price |  Volume | Total_earning | Return_rate |     Category |
+|      APPLE |         244.3 |         183.5 |    1025 |       62357.4 |         33% |        Stock |
+|      TESLA |         967.5 |         860.3 |      50 |        5358.0 |         12% |        Stock |
+|  MICROSOFT |         500.2 |           0.0 |       0 |           0.0 |          0% |        Stock |
+|     AMAZON |        5520.0 |        3577.7 |      20 |       38845.8 |         54% |        Stock |
+|        OIL |         178.6 |         109.0 |     100 |        6960.1 |         63% |    Commodity |
+|       GOLD |        3083.3 |           0.0 |       0 |           0.0 |          0% |    Commodity |
+|    BITCOIN |       59756.7 |      -38859.7 |       1 |       98616.4 |       -253% |      Cryptos |
+|        CNY |        7268.6 |        7268.6 |      50 |           0.0 |          0% |     Currency |
+-----------------------------------------------------------------------------------------------------
+Your current cash: $472177.3
+
+List of command: 
+1: Purchase asset
+2: Sell asset
+3: Borrow money from mom
+4: Deal with Sir Derrick (Exclusive discount!)
+5: Check market
+6: Check my portfolio
+7: Review past transactions
+0: End this turn
+-1: End game
+----------------
+Input command (e.g. 3): 0
+
+
+Round10 ends.
+------------------------------------------------------------
+Mom: Sweetheart, I do notice you've borrowed some money from me...
+Mom: That's okay, you don't have to return it, but I do want more family time with you.
+Mom: How about you go shopping with me?
+I: Sure...
+------------------------------
+
+
+Event bill: $16000.0
+Current cash: $456177.3
+------------------------------
+
+
+Game ends!
+
+The following table shows your portfolio:
+-----------------------------------------------------------------------------------------------------
+| Asset_name | Current_price | Average_price |  Volume | Total_earning | Return_rate |     Category |
+|      APPLE |         244.3 |         183.5 |    1025 |       62357.4 |         33% |        Stock |
+|      TESLA |         967.5 |         860.3 |      50 |        5358.0 |         12% |        Stock |
+|  MICROSOFT |         500.2 |           0.0 |       0 |           0.0 |          0% |        Stock |
+|     AMAZON |        5520.0 |        3577.7 |      20 |       38845.8 |         54% |        Stock |
+|        OIL |         178.6 |         109.0 |     100 |        6960.1 |         63% |    Commodity |
+|       GOLD |        3083.3 |           0.0 |       0 |           0.0 |          0% |    Commodity |
+|    BITCOIN |       59756.7 |      -38859.7 |       1 |       98616.4 |       -253% |      Cryptos |
+|        CNY |        7268.6 |        7268.6 |      50 |           0.0 |          0% |     Currency |
+-----------------------------------------------------------------------------------------------------
+
+
+The table below shows your Histroy: 
+-------------------------------------------------------------
+|       Name |     Price |   Volume |        Time |  Status |
+|        OIL |     109.0 |      100 |      Round1 |       B |
+|    BITCOIN |   43128.6 |       11 |      Round2 |       B |
+|    BITCOIN |   51327.4 |       10 |      Round4 |       S |
+|      APPLE |     198.3 |     3025 |      Round4 |       B |
+|     AMAZON |    3577.7 |       20 |      Round6 |       B |
+|      TESLA |     860.3 |       50 |      Round7 |       B |
+|      APPLE |     205.9 |     2000 |      Round8 |       S |
+|        CNY |    7268.6 |       50 |     Round10 |       B |
+-------------------------------------------------------------
+
+
+Total asset value: $638085.9
+Cash: $456177.3
+Borrowing: $200000
+You have lost105737.0 with an intial fund of $1,000,000.
+Nice try though!
+(base) xuziteng@xuzitengs-MacBook-Air 2113gp % 
