@@ -41,7 +41,6 @@ bool transaction_verification(Asset a[8], string action, string name, int amount
 
       if (reply == "Yes" || reply == "yes" || reply == "Y" || reply == "y")
       {
-       cash -= total_expense;
        break;
       }
       else if (reply == "No" || reply == "no" || reply == "N" || reply == "n")
@@ -60,6 +59,7 @@ bool transaction_verification(Asset a[8], string action, string name, int amount
       cout << "No enough cash. Transaction failed." << endl;
       return false;
     }
+    cash -= total_expense;
   }
 
 
@@ -78,7 +78,7 @@ bool transaction_verification(Asset a[8], string action, string name, int amount
 
       if (reply == "Yes" || reply == "yes" || reply == "Y" || reply == "y")
       {
-       cash += total_expense;
+
 
        break;
       }
@@ -113,5 +113,6 @@ bool transaction_verification(Asset a[8], string action, string name, int amount
     cout << "Invalid instruction" << endl;
     return false;
   }
+  cash += total_expense;
   return true;
 }

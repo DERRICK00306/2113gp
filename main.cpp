@@ -222,11 +222,7 @@ int main()
 
 
       cin >> command;
-      if (cin.fail())
-      {
-        cout << "Invalid input. Please input again.\n";
-        continue;
-      }
+
       cout << "\n\n";
 
       if (command == -1)
@@ -256,7 +252,7 @@ int main()
             cout << "Input transaction volume in integer (e.g. 150): ";
             int vol;
             cin >> vol;
-            
+
             if (cin.fail())
             {
               cout << "Invalid input.\n";
